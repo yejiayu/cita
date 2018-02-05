@@ -1,0 +1,820 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://github.com/cryptape/cita/usage-guide/smart-contract-guide/">
+      
+      
+        <meta name="author" content="Cryptape">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>Smart Contract Guide - CITA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://github.com/cryptape/cita" title="CITA" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                CITA
+              </span>
+              <span class="md-header-nav__topic">
+                Smart Contract Guide
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/cryptape/cita/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    CITA
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/cryptape/cita/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Key Concepts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Key Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../key-concepts/blockchain/" title="Blockchain" class="md-nav__link">
+      Blockchain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../key-concepts/cita/" title="CITA Features" class="md-nav__link">
+      CITA Features
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../components/" title="Components" class="md-nav__link">
+      Components
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Usage Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Usage Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bootstrap/" title="Bootstrap" class="md-nav__link">
+      Bootstrap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Smart Contract Guide
+      </label>
+    
+    <a href="./" title="Smart Contract Guide" class="md-nav__link md-nav__link--active">
+      Smart Contract Guide
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="智能合约简介" class="md-nav__link">
+    智能合约简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="编写智能合约" class="md-nav__link">
+    编写智能合约
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="编译合约" class="md-nav__link">
+    编译合约
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="创建合约" class="md-nav__link">
+    创建合约
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="调用合约" class="md-nav__link">
+    调用合约
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rpc/" title="JSON-RPC" class="md-nav__link">
+      JSON-RPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rpc_error_code/" title="JSON-RPC Error Code" class="md-nav__link">
+      JSON-RPC Error Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admintool/" title="System Contract" class="md-nav__link">
+      System Contract
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../txtool/" title="Tool" class="md-nav__link">
+      Tool
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../system_management/" title="System Management" class="md-nav__link">
+      System Management
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Architecture
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../architecture/architecture/" title="Micro Service" class="md-nav__link">
+      Micro Service
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../architecture/consensus/" title="Consensus" class="md-nav__link">
+      Consensus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../architecture/transaction_process/" title="Transaction Process" class="md-nav__link">
+      Transaction Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../architecture/view/" title="View" class="md-nav__link">
+      View
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="智能合约简介" class="md-nav__link">
+    智能合约简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="编写智能合约" class="md-nav__link">
+    编写智能合约
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="编译合约" class="md-nav__link">
+    编译合约
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="创建合约" class="md-nav__link">
+    创建合约
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="调用合约" class="md-nav__link">
+    调用合约
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/cryptape/cita/edit/master/docs/usage-guide/smart-contract-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="_1">智能合约指南<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">智能合约简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>智能合约是存储在区块链上的一段代码，它们可以被区块链上的交易所触发，被触发之后，这段代码可以从区块链上读取数据或者向区块链上写入数据。</p>
+<p>从用户角度来讲，智能合约通常被认为是一个自动担保账户，当特定的条件满足时，程序就会释放和转移资金。</p>
+<p>从技术角度来讲，智能合约被认为是网络服务器，只是这些服务器并不是使用 IP 地址架设在互联网上，而是架设在区块链上，从而可以在其上面运行特定的合约程序。</p>
+<p>智能合约是编程在区块链上的汇编语言，我们通常使用更高级的语言例如 Solidity 等专用语言来编写合约程序，然后将它编译成区块链可以识别的字节码。合约代码被触发后将是自动执行的，要么成功执行，要么所有的状态变化都撤消，这就避免了合约部分执行的情况。</p>
+<h2 id="_3">编写智能合约<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>智能合约是由一组代码和数据组成的程序，位于以太坊区块链上的一个特殊地址中。我们以 Solidity 编写智能合约为例，简单介绍一下如何编写一个规范的合约程序，合约 HelloWorld.sol 的代码如下：</p>
+<div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">19</span><span class="p">;</span>
+
+<span class="kd">contract</span> <span class="n">HelloWorld</span> <span class="p">{</span>
+    <span class="kt">uint</span> <span class="nb">balance</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="n">update</span><span class="p">(</span><span class="kt">uint</span> <span class="n">amount</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">address</span><span class="p">,</span> <span class="kt">uint</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">balance</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">msg</span><span class="p">.</span><span class="n">sender</span><span class="p">,</span> <span class="nb">balance</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>说明：上述示例中 <code>uint balance</code> 表示声明了一个状态变量，类型为 <code>uint</code>（即 256 位的无符号整数）。 <code>function update(uint amount) returns (address, uint)</code> 表示一个函数，其中参数为 <code>amount</code> ，返回值为一个元组 <code>(address, unit)</code> ，函数中返回值可以只给出类型，而无需具体的变量名。该函数的功能是更新 <code>HelloWord</code> 合约的 <code>balance</code> ，即调用合约成功执行后，将增加 <code>balance</code> 余额。</p>
+<p>编写 Solidity 合约代码的详细说明可参考<a href="http://solidity.readthedocs.io/en/develop/">Solidity 官方开发指南</a>。</p>
+<h2 id="_4">编译合约<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>首先我们需要安装 Solidity 编译器，安装编译器有多种不同的方法，我们推荐安装 <code>solc</code> 编译器稳定版，具体操作如下：</p>
+<div class="highlight"><pre><span></span>sudo add-apt-repository ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install solc
+</pre></div>
+
+<p>其他安装编译器的方法可以参考<a href="https://solidity.readthedocs.io/en/latest/installing-solidity.html#building-from-source">Solidity 编译安装介绍</a>。</p>
+<p>然后使用 <code>sloc</code> 编译器命令将合约程序编译成字节码：</p>
+<div class="highlight"><pre><span></span>solc HelloWorld.sol --bin
+</pre></div>
+
+<p>智能合约编译完成后，将输出如下：</p>
+<div class="highlight"><pre><span></span><span class="o">=======</span> HelloWorld.sol:HelloWorld <span class="o">=======</span>
+Binary:
+6060604052341561000f57600080fd5b5b60f08061001e6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806382ab890a14603d575b600080fd5b3415604757600080fd5b605b600480803590602001909190505060a4565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b60008082600080828254019250508190555033600054915091505b9150915600a165627a7a72305820b88062f2366288fcc87eb44079fcc26956e4c806546ad0e75b6927d14de63d950029
+</pre></div>
+
+<p>生成智能合约函数调用的 Hash 值的命令如下：</p>
+<div class="highlight"><pre><span></span>solc HelloWorld.sol --hashes
+</pre></div>
+
+<p>其输出如下：</p>
+<div class="highlight"><pre><span></span><span class="o">=======</span> HelloWorld.sol:HelloWorld <span class="o">=======</span>
+Function signatures:
+82ab890a: update<span class="o">(</span>uint256<span class="o">)</span>
+</pre></div>
+
+<h2 id="_5">创建合约<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>在 CITA 中是使用 <code>JSON-PRC</code> 来发送交易的，发送创建合约交易之前，首先需要构造创建合约的 JSON 配置文件 <code>config_create.json</code>，其内容如下：</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;ipandport&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;127.0.0.1:1340&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;txnum&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;threads&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span>
+    <span class="s2">&quot;6060604052341561000f57600080fd5b5b60f08061001e6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806382ab890a14603d575b600080fd5b3415604757600080fd5b605b600480803590602001909190505060a4565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b60008082600080828254019250508190555033600054915091505b9150915600a165627a7a72305820b88062f2366288fcc87eb44079fcc26956e4c806546ad0e75b6927d14de63d950029&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>其中 <code>category</code> 只有两种取值，等于 1 时表示创建合约，等于 2 时表示调用合约； <code>ipandport</code> 表示接收该交易的节点 IP 地址和端口； <code>txnum</code> 表示发送的交易个数，该配置是为了以后兼容批量交易而预留的扩展接口； <code>threads</code> 表示执行该交易启动的线程个数；而 <code>code</code> 表示编译合约后生成的字节码，即上述编译合约输出的 <code>Binary</code> 。</p>
+<p>然后使用以下命令创建智能合约：</p>
+<div class="highlight"><pre><span></span>trans_evm --config<span class="o">=</span>config_create.json
+</pre></div>
+
+<p>执行成功后，便会经过 CITA 系统的处理，然后返回创建合约交易的执行结果。</p>
+<h2 id="_6">调用合约<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>同理，为了使用 <code>JSON-PRC</code> 调用合约，需要构造调用合约的 JSON 配置文件 <code>config_call.json</code>，其内容如下：</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nt">&quot;ipandport&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;127.0.0.1:1340&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;txnum&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;threads&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span>
+    <span class="s2">&quot;82ab890a0000000000000000000000000000000000000000000000000000000012345678&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>其中需要注意的是 <code>category</code> 等于 2 表示调用合约，而 <code>code</code> 一般是由合约函数名 Hash 和它对应的参数值组成的，如果该函数没有参数，则仅仅使用函数名 Hash 即可。例如上述示例中合约函数名 Hash 即输出 <code>Function signatures</code> 下的 <code>update(uint256)</code> 对应的 Hash 值，占前面 32 比特，其中函数名为 <code>update</code> ，参数类型为 <code>uint256</code>，而参数部分是将参数按位数补齐并序列化，占后面 256 比特。如果函数包含多个参数，每个参数都占 256 比特，且参数按照函数的参数顺序排列。</p>
+<p>然后使用以下命令调用智能合约：</p>
+<div class="highlight"><pre><span></span>trans_evm --config<span class="o">=</span>config_call.json
+</pre></div>
+
+<p>执行成功后，便会经过 CITA 系统的处理，然后返回调用合约交易的执行结果。</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../bootstrap/" title="Bootstrap" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Bootstrap
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../rpc/" title="JSON-RPC" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                JSON-RPC
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
