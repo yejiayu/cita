@@ -351,33 +351,6 @@
     部署CITA
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker" title="安装docker" class="md-nav__link">
-    安装docker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cita_1" title="获取CITA镜像" class="md-nav__link">
-    获取CITA镜像
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-composecita" title="使用docker-compose部署CITA" class="md-nav__link">
-    使用docker-compose部署CITA
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -723,33 +696,6 @@
     部署CITA
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker" title="安装docker" class="md-nav__link">
-    安装docker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cita_1" title="获取CITA镜像" class="md-nav__link">
-    获取CITA镜像
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-composecita" title="使用docker-compose部署CITA" class="md-nav__link">
-    使用docker-compose部署CITA
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -846,117 +792,43 @@
                 
                 
                 <h1 id="bootstrap">Bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">&para;</a></h1>
-<p>通过本文所述方法和项目中的脚本，我们可以快速的搭建好自己的<code>CITA</code>私链进行开发测试。</p>
+<p>通过本文所述方法和项目中的脚本，我们可以快速的搭建<code>CITA</code>环境，进行智能合约的开发测试。</p>
 <h2 id="cita">部署CITA<a class="headerlink" href="#cita" title="Permanent link">&para;</a></h2>
-<p>为了简化<code>CITA</code>的多机部署，帮助用户快速搭建<code>CITA</code>运行环境，我们推荐使用<code>docker</code>部署 <code>CITA</code>。</p>
-<h3 id="docker">安装docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
-<p>安装<code>docker</code>及<code>docker-compose</code></p>
-<div class="highlight"><pre><span></span>sudo apt-get install docker docker-compose  docker.io
-</pre></div>
-
-<p>国内访问<code>hub.docker.com</code>可采用镜像加速：</p>
-<div class="highlight"><pre><span></span>cat &gt; daemon.json  <span class="s">&lt;&lt; EOF</span>
-<span class="s">{</span>
-<span class="s">   &quot;registry-mirror&quot;: [ &quot;https://registry.docker-cn.com&quot; ]</span>
-<span class="s">}</span>
-<span class="s">EOF</span>
-sudo mv daemon.json /etc/docker
-</pre></div>
-
-<h3 id="cita_1">获取CITA镜像<a class="headerlink" href="#cita_1" title="Permanent link">&para;</a></h3>
-<p>获取<code>CITA</code>镜像有两种方式:</p>
-<ol>
-<li>一种是直接从<code>hub.docker.com</code>拉取</li>
-</ol>
-<div class="highlight"><pre><span></span>docker pull cryptape/play
-</pre></div>
-
-<ol>
-<li>另一种方式是通过发布件构建来获取<code>CITA</code>镜像</li>
-</ol>
-<p>具体方式有两种，分别是二进制发布件构建和从源码编译生成发布件。</p>
-<ul>
-<li>从二进制发布件构建</li>
-</ul>
-<div class="highlight"><pre><span></span>wget https://github.com/cryptape/cita/releases/download/v0.10/cita.tar.bz2
-tar xf cita-v0.1.0.tar.bz2
-<span class="nb">cd</span> cita
-scripts/build_image_from_binary.sh
-</pre></div>
-
-<p>完成后可以通过<code>docker images</code>找到<code>cryptape/play</code>的<code>docker</code>镜像。</p>
-<ul>
-<li>从源码编译生成发布件</li>
-</ul>
-<div class="highlight"><pre><span></span>git clone http://github.com/cryptape/cita
-<span class="nb">cd</span> cita
-scripts/build_image_from_source.sh
-</pre></div>
-
-<h3 id="docker-composecita">使用docker-compose部署CITA<a class="headerlink" href="#docker-composecita" title="Permanent link">&para;</a></h3>
-<ul>
-<li>准备</li>
-</ul>
-<div class="highlight"><pre><span></span>mkdir cita
-<span class="nb">cd</span> cita
-wget https://raw.githubusercontent.com/cryptape/cita/develop/scripts/docker-compose.yaml
-</pre></div>
-
-<ul>
-<li>生成配置数据</li>
-</ul>
-<div class="highlight"><pre><span></span>sudo docker-compose run admin
-</pre></div>
-
-<ul>
-<li>启动4个节点</li>
-</ul>
-<div class="highlight"><pre><span></span>sudo docker-compose up node0 node1 node2 node3
-</pre></div>
-
-<ul>
-<li>关闭节点</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="c1"># stop single node</span>
-docker-compose stop node0
-<span class="c1"># start single node</span>
-docker-compose start node0
-<span class="c1"># stop all nodes</span>
-docker-compose down
-</pre></div>
-
+<p>为了简化<code>CITA</code>的部署，帮助用户快速搭建<code>CITA</code>运行环境，我们推荐使用<code>docker</code>部署 <code>CITA</code>。</p>
+<p>具体步骤请参见<a href="https://cryptape.github.io/cita/getting_started/">快速入门</a></p>
+<p>在发布件目录启动所有的<code>CITA</code>节点后，直接运行<code>./env.sh</code>获取一个docker环境的shell。</p>
+<p>后续命令都在这个shell中执行。</p>
 <h2 id="_1">部署智能合约<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>CITA完全兼容以太坊的智能合约，<code>solidity</code>是智能合约最为推荐的语言，因此我们也采用<code>solidity</code>语言来编写和测试智能合约。</p>
 <h3 id="_2">编译<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>要想编译<code>solidity</code>文件，你需要先安装编译器，<code>solidity</code>智能合约可以通过多种方式进行编译</p>
-<ol>
-<li>通过在线<code>solidity</code>实时编译器来编译。<a href="https://remix.ethereum.org/">访问地址</a></li>
-<li>安装<code>solc</code>编译器编译</li>
-</ol>
-<p>本文采用第二种方式，<code>solc</code> 编译器是一个来自<code>C++</code>客户端实现的组件，安装方法请参考<a href="http://solidity.readthedocs.io/en/latest/installing-solidity.html#installing-solidity">这里</a>。</p>
-<p>安装完成后，在<code>Terminal</code>中执行<code>solc --version</code>，如果返回值为：</p>
-<div class="highlight"><pre><span></span>solc, the solidity compiler commandline interface
-Version: <span class="m">0</span>.4.18+commit.9cf6e910.Linux.g++
+<p>智能合约的源码文件，需要先使用solidity编译器<code>solc</code>编译成字节码。</p>
+<p>我们提供的docker环境中已经包含了<code>solc</code>。在shell中执行<code>solc --version</code>查看版本信息：</p>
+<div class="highlight"><pre><span></span><span class="c1"># solc --version</span>
+solc, the solidity compiler commandline interface
+Version: <span class="m">0</span>.4.19+commit.c4cbbb05.Linux.g++
 </pre></div>
 
-<p>表示安装成功，接下来就可以使用<code>solc</code>命令编译<code>solidity</code>文件了。</p>
-<p><code>CITA</code>工程中包含了智能合约示例<code>solidity</code>文件，存放目录地址为 <code>（DIR)/cita/cita/scripts/contracts/tests</code>，其中<code>$(DIR)</code>代表工程的目录地址，进入该目录，就可以看到<code>test_example.sol</code>文件。</p>
-<p><code>test_example.sol</code>文件是一个很简单的合约文件，只提供了简单的<code>get</code>和<code>set</code>方法，我们可以先调用<code>set</code>方法存储一个任意数值，然后再调用<code>get</code>方法验证存储是否生效，以此来检验合约部署和运行是否正常。</p>
-<p>在<code>Terminal</code>执行：</p>
-<div class="highlight"><pre><span></span>solc test_example.sol --bin
+<p><code>CITA</code>发布件中包含了一些智能合约示例，存放在 <code>scripts/contracts/tests/contracts</code>中。</p>
+<p>以<code>test_example.sol</code>为例。这是一个很简单的合约文件，只提供了简单的<code>get</code>和<code>set</code>方法。我们可以先调用<code>set</code>方法存储一个任意数值，然后再调用<code>get</code>方法验证存储是否生效，以此来检验合约部署和运行是否正常。</p>
+<p>的执行：</p>
+<div class="highlight"><pre><span></span><span class="c1"># cd scripts/contracts/tests/contracts</span>
+<span class="c1"># solc test_example.sol --bin</span>
+<span class="o">=======</span> test_example.sol:SimpleStorage <span class="o">=======</span>
+Binary: 
+6060604052341561000f57600080fd5b60d38061001d6000396000f3006060604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c14606e575b600080fd5b3415605857600080fd5b606c60048080359060200190919050506094565b005b3415607857600080fd5b607e609e565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582020642d4bfc8bb29cfd3390d1aafea86ec7219a70889a640325d7fabb0b0534960029
 </pre></div>
 
-<p>如果文件没有错误，返回结果中将会包括<code>test_example.sol</code>的字节码，这个数值就是<code>CITA</code>链上该智能合约的唯一标示值。</p>
+<p>如果文件没有错误，返回结果中将会包括<code>test_example.sol</code>的字节码。</p>
 <h3 id="_3">部署合约<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>得到<code>solidity</code>文件字节码后，就可以将其部署到<code>CITA</code>链上了，部署的方法已经用<code>python</code>脚本封装，只需要传入私钥和字节码即可。</p>
-<p>目前支持的<code>python</code>版本是2.7，<code>python</code>脚本存放的位置为<code>（DIR)/cita/cita/scripts/contracts/txtool/txtool</code>，其中<code>$(DIR)</code>代表工程的目录地址，使用前你还需要提前安装好<code>python</code>脚本的依赖，具体安装方法可以参考<code>(DIR)/cita/cita/scripts/contracts/txtool</code>目录下的<code>README.md</code>文件。</p>
-<p>在<code>Terminal</code>执行以下命令：</p>
+<p>得到合约字节码后，就可以将其部署到<code>CITA</code>链上了，部署的方法已经用<code>python</code>脚本封装，只需要传入私钥和字节码即可。</p>
+<p>目前支持的<code>python</code>版本是2.7，<code>python</code>脚本存放的位置为<code>scripts/txtool/txtool</code>，具体安装和使用方法可以参考目录下的<code>README.md</code>文件。</p>
+<p>docker环境已经包含了该工具的依赖，可以直接运行命令部署合约：</p>
 <div class="highlight"><pre><span></span>python make_tx.py --privkey <span class="s2">&quot;352416e1c910e413768c51390dfd791b414212b7b4fe6b1a18f58007fa894214&quot;</span> --code     <span class="s2">&quot;606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da20029&quot;</span>
 </pre></div>
 
-<p>参数解释：<code>code</code>为第一步中获得的字节码, <code>privkey</code>可随意获取</p>
+<p>参数解释：<code>code</code>为第一步中获得的字节码, <code>privkey</code>可随意设置。</p>
 <h3 id="_4">发送交易<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>在<code>Terminal</code>中执行：<code>python send_tx.py</code></p>
+<p>执行：<code>python send_tx.py</code></p>
 <p>结果如下:</p>
 <div class="highlight"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;jsonrpc&quot;</span>:<span class="s2">&quot;2.0&quot;</span>,
@@ -970,8 +842,9 @@ Version: <span class="m">0</span>.4.18+commit.9cf6e910.Linux.g++
 </pre></div>
 
 <p><code>status</code>为<code>OK</code>，表示合约已经发送到<code>CITA</code>链上。</p>
+<p>注意：上一步生成的交易具有时效性，如果执行结果为<code>InvalidUntilBlock</code>，请重新执行上一步<code>生成交易</code>，并尽快执行<code>发送交易</code>。</p>
 <h3 id="_5">获得回执<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>在<code>Terminal</code>中执行：<code>python get_receipt.py</code></p>
+<p>执行：<code>python get_receipt.py</code></p>
 <p>结果如下:</p>
 <div class="highlight"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;contractAddress&quot;</span>: <span class="s2">&quot;0x73552bc4e960a1d53013b40074569ea05b950b4d&quot;</span>,          // 合约地址
@@ -991,7 +864,7 @@ Version: <span class="m">0</span>.4.18+commit.9cf6e910.Linux.g++
 <p>这里需要重点关注<code>contractAddress</code>和<code>blockNumber</code>，下文调用合约方法会用到。</p>
 <h3 id="hash">方法Hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
 <p>合约的调用是通过发送交易命令完成，调用具体的方法则是通过方法<code>hash</code>值完成</p>
-<p>在<code>Terminal</code>中执行：<code>solc test_example.sol --hash</code></p>
+<p>执行：<code>solc test_example.sol --hash</code></p>
 <p>结果如下:</p>
 <div class="highlight"><pre><span></span><span class="o">=======</span> example.sol:SimpleStorage <span class="o">=======</span>
 Function signatures:
@@ -1001,14 +874,13 @@ Function signatures:
 
 <p>这里的<code>get</code>和<code>set</code>方法<code>hash</code>值是<code>CITA</code>链上的唯一标示值，下文调用合约方法会用到。</p>
 <h3 id="_6">调用合约方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>假定我们调用<code>set</code>方法，参数为1，也就是说将数值1存储到区块链内存中</p>
-<p>在<code>Terminal</code>中执行：</p>
+<p>假定我们调用<code>set</code>方法，参数为1，也就是说将数值1存储到区块链内存中。</p>
 <div class="highlight"><pre><span></span>python make_tx.py --privkey <span class="s2">&quot;352416e1c910e413768c51390dfd791b414212b7b4fe6b1a18f58007fa894214&quot;</span> --to <span class="s2">&quot;73552bc4e960a1d53013b40074569ea05b950b4d&quot;</span> --code <span class="s2">&quot;60fe47b10000000000000000000000000000000000000000000000000000000000000001&quot;</span>
 </pre></div>
 
 <p><code>privkey</code>是你的私钥，<code>to</code>参数是合约的目标地址，<code>code</code>参数是<code>set</code>方法和参数<code>hash</code>值的拼接，<code>set</code>方法的<code>hash</code>值为60fe47b1，将参数1转换为uint256，转换成16进制就是64位。</p>
 <h3 id="_7">发送交易命令<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>在<code>Terminal</code>中执行：<code>python send_tx.py</code></p>
+<p>执行：<code>python send_tx.py</code></p>
 <div class="highlight"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;jsonrpc&quot;</span>:<span class="s2">&quot;2.0&quot;</span>,
     <span class="s2">&quot;id&quot;</span>:1,
@@ -1020,8 +892,9 @@ Function signatures:
 <span class="o">}</span>
 </pre></div>
 
+<p>注意：上一步生成的交易具有时效性，如果执行结果为<code>InvalidUntilBlock</code>，请重新执行上一步<code>生成交易</code>，并尽快执行<code>发送交易</code>。</p>
 <h3 id="_8">获得调用回执<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>在<code>Terminal</code>中执行：<code>python get_receipt.py</code></p>
+<p>执行：<code>python get_receipt.py</code></p>
 <p>结果如下：</p>
 <div class="highlight"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;contractAddress&quot;</span>: null,

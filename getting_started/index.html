@@ -269,8 +269,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="安装编译器及开发库" class="md-nav__link">
-    安装编译器及开发库
+  <a href="#docker" title="安装docker" class="md-nav__link">
+    安装docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" title="获取Docker镜像" class="md-nav__link">
+    获取Docker镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="获取源码" class="md-nav__link">
+    获取源码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-env-and-daemon" title="Docker env and daemon" class="md-nav__link">
+    Docker env and daemon
   </a>
   
 </li>
@@ -281,28 +302,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="安装" class="md-nav__link">
-    安装
+  <a href="#_5" title="编译" class="md-nav__link">
+    编译
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="配置" class="md-nav__link">
-    配置
+  <a href="#_6" title="生成节点配置" class="md-nav__link">
+    生成节点配置
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" title="运行" class="md-nav__link">
-    运行
+  <a href="#_7" title="运行节点" class="md-nav__link">
+    运行节点
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" title="验证" class="md-nav__link">
+  <a href="#_8" title="测试" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="验证" class="md-nav__link">
     验证
   </a>
   
@@ -677,8 +705,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="安装编译器及开发库" class="md-nav__link">
-    安装编译器及开发库
+  <a href="#docker" title="安装docker" class="md-nav__link">
+    安装docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" title="获取Docker镜像" class="md-nav__link">
+    获取Docker镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="获取源码" class="md-nav__link">
+    获取源码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-env-and-daemon" title="Docker env and daemon" class="md-nav__link">
+    Docker env and daemon
   </a>
   
 </li>
@@ -689,28 +738,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="安装" class="md-nav__link">
-    安装
+  <a href="#_5" title="编译" class="md-nav__link">
+    编译
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="配置" class="md-nav__link">
-    配置
+  <a href="#_6" title="生成节点配置" class="md-nav__link">
+    生成节点配置
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" title="运行" class="md-nav__link">
-    运行
+  <a href="#_7" title="运行节点" class="md-nav__link">
+    运行节点
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" title="验证" class="md-nav__link">
+  <a href="#_8" title="测试" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="验证" class="md-nav__link">
     验证
   </a>
   
@@ -736,49 +792,57 @@
                 <h1 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">依赖<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">系统平台要求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>CITA的运行环境是Linux和OSX操作系统，目前不支持Windows系统。CITA是基于Ubuntu 16.04稳定版开发的，在该系统版本上运行将是正确无误的。如果在Linux系统的其他版本上运行出现问题，建议将系统版本切换到Ubuntu 16.04版本。</p>
-<h3 id="_4">安装编译器及开发库<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>CITA是基于Ubuntu 16.04稳定版开发的，在该系统版本上运行将是正确无误的。</p>
+<p>推荐使用 <code>docker</code> 编译和部署 <code>CITA</code>，保证环境一致。</p>
+<h3 id="docker">安装docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/install/">在线资料</a></p>
+<h3 id="docker_1">获取Docker镜像<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h3>
+<p>CITA的Docker镜像托管在 <a href="https://hub.docker.com/u/cita/dashboard/">DockerHub</a></p>
+<p>可以使用 <code>docker pull</code> 命令直接从DockerHub获取， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/pull.html">在线资料</a>。</p>
+<p>对于内网环境，也可以通过 <code>docker save</code> 和 <code>docker load</code> 传递镜像， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/other.html">在线资料</a>。</p>
+<h3 id="_4">获取源码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>从Github仓库下载CITA的源代码，然后切换到CITA的源代码目录</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> cita
+<div class="highlight"><pre><span></span>git pull https://github.com/cryptape/cita.git
+<span class="nb">cd</span> cita
 git submodule init
 git submodule update
 </pre></div>
 
-<p>启动 <code>install_develop.sh</code> 脚本安装依赖，命令如下：</p>
-<div class="highlight"><pre><span></span>scripts/install_develop.sh
+<h3 id="docker-env-and-daemon">Docker env and daemon<a class="headerlink" href="#docker-env-and-daemon" title="Permanent link">&para;</a></h3>
+<p>在源码根目录下，我们提供了<code>env.sh</code>脚本，封装了docker相关的操作。</p>
+<p>运行此脚本，以实际要运行的命令作为参数，即表示在docker环境中运行相关命令。</p>
+<p>例如：</p>
+<p><div class="highlight"><pre><span></span>./env.sh make debug
 </pre></div>
-
-<p>安装完成后，可以重新登录使Rust相关的环境变量生效，也可直接使用以下命令立即生效：</p>
-<div class="highlight"><pre><span></span><span class="nb">source</span> ~/.cargo/env
-</pre></div>
-
-<p>经过如上设置，CITA的依赖便安装完成了。</p>
-<h2 id="_5">安装<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>单元测试依赖rabbitmq, 如果没有启动，需要用以下脚本启动并配置</p>
-<div class="highlight"><pre><span></span>scripts/config_rabbitmq.sh
-</pre></div>
-
+即表示在docker环境中运行<code>make debug</code>。</p>
+<p>不带任何参数运行<code>./env.sh</code>，将直接获取一个docker环境的shell。</p>
+<p>国内用户请使用 <code>env_cn.sh</code>，提供了编译时的国内镜像加速。</p>
+<p>还提供了<code>daemon.sh</code>,用法同<code>env.sh</code>，效果是后台运行。</p>
+<p>如果出现docker相关的报错，可以执行如下命令并重试：
+<div class="highlight"><pre><span></span>docker <span class="nb">kill</span> <span class="k">$(</span>docker ps -a -q<span class="k">)</span>
+</pre></div></p>
+<h2 id="_5">编译<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）</p>
-<div class="highlight"><pre><span></span>make debug
+<div class="highlight"><pre><span></span>./env.sh make debug
 </pre></div>
 
 <p>或者</p>
-<div class="highlight"><pre><span></span>make release
+<div class="highlight"><pre><span></span>./env.sh make release
 </pre></div>
 
-<p>编译成功后，其生成的可执行文件将放在<code>target/install</code>目录下，生产环境下只能看到target/install里面的内容。</p>
-<h2 id="_6">配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>先切换到发布件目录，并将bin目录加入到PATH环境变量中：</p>
+<p>编译生成的文件在发布件目录<code>target/install</code>下，生产环境下只需要这个目录即可。</p>
+<h2 id="_6">生成节点配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>先切换到发布件目录：</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> target/install
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PWD</span>/bin:<span class="nv">$PATH</span>
 </pre></div>
 
-<p>另外，脚本<code>admintool.sh</code>主要用来创建创世块配置、节点相关配置、网络连接配置、私钥配置等相关文件。</p>
-<p>设置节点的配置信息，该默认示例Demo中配置了4个节点，对Demo中的节点进行默认初始化的操作命令为：</p>
-<div class="highlight"><pre><span></span>./bin/admintool.sh
+<p>发布件目录中的<code>admintool</code>工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。</p>
+<p>该工具默认生成的是本地4个节点的Demo示例配置：</p>
+<div class="highlight"><pre><span></span>./env.sh ./bin/admintool.sh
 </pre></div>
 
-<p>此外，用户可以根据需要更改其中的默认配置，使用命令<code>admintool.sh -h</code>来获得详细帮助，允许自定义配置包括：</p>
+<p>生产环境中，用户需要根据实际情况更改默认配置。</p>
+<p>使用命令<code>admintool.sh -h</code>来获得详细帮助信息，允许自定义的配置包括：</p>
 <ul>
 <li>系统管理员账户</li>
 <li>网络列表，按照<code>IP1:PORT1,IP2:PORT2,IP3:PORT3 ... IPn:PORTn</code>的格式</li>
@@ -795,48 +859,73 @@ git submodule update
 <li>node2</li>
 <li>node3</li>
 </ul>
-<p>可以使用<code>cita start node0</code>等命令对节点进行启动和停止等操作了。</p>
-<h2 id="_7">运行<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>启动节点的服务步骤都是相同的，以<code>node0</code>为例，其启动CITA节点的具体步骤为：</p>
-<p>1) 启动节点<code>node0</code>之前需进行初始化：</p>
-<div class="highlight"><pre><span></span>cita setup node0
+<h2 id="_7">运行节点<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>操作节点的命令都是相同的，以下以<code>node0</code>为例进行演示。</p>
+<ol>
+<li>配置节点：</li>
+</ol>
+<div class="highlight"><pre><span></span>./env.sh ./bin/cita setup node0
 </pre></div>
 
-<p>2) 启动节点<code>node0</code>的服务：</p>
-<div class="highlight"><pre><span></span>cita start node0
+<ol>
+<li>启动节点：</li>
+</ol>
+<p>该命令正常情况下不会返回，因此需要后台运行。
+<div class="highlight"><pre><span></span>./daemon.sh ./bin/cita start node0
+</pre></div></p>
+<ol>
+<li>停止节点：</li>
+</ol>
+<div class="highlight"><pre><span></span>./env.sh ./bin/cita stop node0
 </pre></div>
 
-<p>而停止节点<code>node0</code>服务只需执行以下操作：</p>
-<div class="highlight"><pre><span></span>cita stop node0
+<ol>
+<li>其他操作</li>
+</ol>
+<p>具体使用查看命令的帮助信息：
+<div class="highlight"><pre><span></span>./env.sh ./bin/cita <span class="nb">help</span>
+</pre></div></p>
+<h2 id="_8">测试<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>除了上述的基本操作命令，为了方便用户对Demo进行相关测试，我们在目录<code>cita/tests/integreate_test</code>下提供了一些测试脚本。</p>
+<p>以下命令在源码根目录下运行。</p>
+<ol>
+<li>
+<p>启动4个节点
+<div class="highlight"><pre><span></span>./env.sh tests/integrate_test/cita_start.sh
+</pre></div>
+该命令正常情况下不会返回，需要保持shell不退出。或者用<code>daemon.sh</code>运行。</p>
+</li>
+<li>
+<p>停止4个节点</p>
+</li>
+</ol>
+<p>上一节中的命令中止，或者执行命令：
+<div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_stop.sh
+</pre></div></p>
+<ol>
+<li>基本功能测试</li>
+</ol>
+<p>4个节点启动并成功出块，基本功能测试然后停止4个节点：
+<div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_basic.sh
+</pre></div></p>
+<ol>
+<li>发送交易测试</li>
+</ol>
+<div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_transactiontest.sh
 </pre></div>
 
-<p>此外，<code>cita</code>命令中还包括其他操作，具体使用可以查看相关说明：</p>
-<div class="highlight"><pre><span></span>cita
-</pre></div>
-
-<p>除了上述的基本操作命令，为了方便用户对Demo进行相关测试，我们在目录<code>cita/tests/integreate_test</code>下提供了一些测试脚本。
-例如，测试所有节点服务启动并成功出块，然后停止节点服务的操作为：</p>
-<div class="highlight"><pre><span></span>./cita_start.sh
-</pre></div>
-
-<p>停止所有节点服务的命令为：</p>
-<div class="highlight"><pre><span></span>./cita_stop.sh
-</pre></div>
-
-<p>备注：以上示例Demo的节点启动都是位于同一台机器上，如果需要部署到不同的服务器上，只需删除其他节点的配置("target/install/nodeX")，并保留自己节点的配置，然后将整个目录（即<code>target/install</code>目录）拷贝到其他服务器上运行即可。</p>
-<p>3) 将不同节点部署到不同服务器</p>
-<p>节点的服务器需要安装依赖</p>
-<div class="highlight"><pre><span></span>bash ./scripts/install_runtime.sh
-</pre></div>
-
-<p>将节点拷贝到对应的服务器，并修改<code>network.toml</code>目录下的配置文件，修改为对应的IP地址。
-使用<code>cita start</code>启动各个节点。</p>
-<h2 id="_8">验证<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li>拜占庭测试</li>
+</ol>
+<p>模拟网络异常情况下的功能测试。
+<div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_byzantinetest.sh
+</pre></div></p>
+<h2 id="_9">验证<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>查询节点个数</li>
 </ul>
 <p>Request:</p>
-<div class="highlight"><pre><span></span>curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;net_peerCount&quot;,&quot;params&quot;:[],&quot;id&quot;:74}&#39;</span> <span class="m">127</span>.0.0.1:1337 <span class="p">|</span> jq
+<div class="highlight"><pre><span></span>./env.sh curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;net_peerCount&quot;,&quot;params&quot;:[],&quot;id&quot;:74}&#39;</span> <span class="m">127</span>.0.0.1:1337
 </pre></div>
 
 <p>Result:</p>
@@ -851,7 +940,7 @@ git submodule update
 <li>查询当前块高度。</li>
 </ul>
 <p>Request:</p>
-<div class="highlight"><pre><span></span>curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;cita_blockNumber&quot;,&quot;params&quot;:[],&quot;id&quot;:83}&#39;</span> <span class="m">127</span>.0.0.1:1337 <span class="p">|</span> jq
+<div class="highlight"><pre><span></span>./env.sh curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;cita_blockNumber&quot;,&quot;params&quot;:[],&quot;id&quot;:83}&#39;</span> <span class="m">127</span>.0.0.1:1337
 </pre></div>
 
 <p>Result:</p>
