@@ -477,6 +477,19 @@
     单独增加节点
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="新权限管理系统合约" class="md-nav__link">
+    新权限管理系统合约
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -781,6 +794,19 @@
     单独增加节点
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="新权限管理系统合约" class="md-nav__link">
+    新权限管理系统合约
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -820,30 +846,30 @@
 <div class="highlight"><pre><span></span>usage: ./admintool.sh -a admin_id -l ip_list -n consensus_name -m crypto_method -d block_duration -t
 option:
 -a admin_id    admin identifier
-    default value is &#39;admin&#39;
+    default value is <span class="s1">&#39;admin&#39;</span>
 
--l ip_list     list all the node&#39;s IP and port
-    default value is &#39;127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003&#39;
+-l ip_list     list all the node<span class="s1">&#39;s IP and port</span>
+<span class="s1">    default value is &#39;</span><span class="m">127</span>.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003<span class="s1">&#39;</span>
 
--n consensus_name  name of consensus algorithm
-    default value is &#39;tendermint&#39;, other is &#39;raft&#39; and &#39;poa&#39;
+<span class="s1">-n consensus_name  name of consensus algorithm</span>
+<span class="s1">    default value is &#39;</span>tendermint<span class="s1">&#39;, other is &#39;</span>raft<span class="s1">&#39; and &#39;</span>poa<span class="s1">&#39;</span>
 
--m crypto_method    name of crypto algorithm
-    default value is &#39;SECP&#39;
+<span class="s1">-m crypto_method    name of crypto algorithm</span>
+<span class="s1">    default value is &#39;</span>SECP<span class="s1">&#39;</span>
 
--d block_duration    block generating duration(millisecond)
-    default value is &#39;3000&#39;
+<span class="s1">-d block_duration    block generating duration(millisecond)</span>
+<span class="s1">    default value is &#39;</span><span class="m">3000</span><span class="s1">&#39;</span>
 
--t            consensus test flag, only valid for tendermint
+<span class="s1">-t            consensus test flag, only valid for tendermint</span>
 
--h enable jsonrpc http
-   default enable &#39;true&#39;
+<span class="s1">-h enable jsonrpc http</span>
+<span class="s1">   default enable &#39;</span>true<span class="s1">&#39;</span>
 
--w enable jsonrpc websocket
-   default enable &#39;false&#39;
+<span class="s1">-w enable jsonrpc websocket</span>
+<span class="s1">   default enable &#39;</span>false<span class="s1">&#39;</span>
 
--P define jsonrpc HTTP port or websocket port
-   default port is &#39;1337&#39; or &#39;4337&#39;
+<span class="s1">-P define jsonrpc HTTP port or websocket port</span>
+<span class="s1">   default port is &#39;</span><span class="m">1337</span><span class="s1">&#39; or &#39;</span><span class="m">4337</span><span class="err">&#39;</span>
 
 -k start with kafka
 
@@ -874,11 +900,151 @@ option:
 <h3 id="_4">用户自定义初始化系统合约数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>用户可在本目录下创建<code>init_data.json</code>文件来自定义系统合约的初始化数据。格式参考<code>init_data_example.json</code>文件，如下:</p>
 <div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;0x00000000000000000000000000000000013241a2&quot;</span><span class="p">:</span> <span class="p">[[],</span> <span class="p">[</span><span class="s2">&quot;0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523&quot;</span><span class="p">]],</span>
+    <span class="nt">&quot;0x00000000000000000000000000000000013241a2&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[],</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523&quot;</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
     <span class="nt">&quot;0x00000000000000000000000000000000013241a3&quot;</span><span class="p">:</span> <span class="s2">&quot;0xd3f1a71d1d8f073f4e725f57bbe14d67da22f888&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;0x00000000000000000000000000000000013241a4&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;0x1a702a25c6bca72b67987968f0bfb3a3213c5688&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;0x0dbd369a741319fa5107733e2c9db9929093e3c7&quot;</span><span class="p">]],</span>
-    <span class="nt">&quot;0x00000000000000000000000000000000013241a5&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0x33434ebd8799bc93f3623c7eb619350e41fb08d1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;0xb3b5da596b4ba5caa603afd98c08c294a68ff34d&quot;</span><span class="p">]],</span>
-    <span class="nt">&quot;0x00000000000000000000000000000000013241b4&quot;</span><span class="p">:</span> <span class="s2">&quot;0x9dcd6b234e2772c5451fd4ccf7582f4283140697 &quot;</span>
+    <span class="nt">&quot;0x00000000000000000000000000000000013241a4&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;0x1a702a25c6bca72b67987968f0bfb3a3213c5688&quot;</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;0x0dbd369a741319fa5107733e2c9db9929093e3c7&quot;</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;0x0000000000000000000000000000000031415926&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="kc">false</span><span class="p">,</span>
+        <span class="kc">false</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;0x00000000000000000000000000000000013241b4&quot;</span><span class="p">:</span> <span class="s2">&quot;0x9dcd6b234e2772c5451fd4ccf7582f4283140697&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;0x00000000000000000000000000000000013241b5&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000013241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;newPermission&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;fc4a089c&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000023241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;deletePermission&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;98a05bb1&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000033241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;updatePermission&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;f036ed56&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;6446ebd8&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;537bf9a3&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000043241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;setAuth&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0f5aa9f3&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;52c5b4cc&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000053241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;cancelAuth&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;0x00000000000000000000000000000000013241b2&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;3482e0c9&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;a5925b5b&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ba00ab60&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000063241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;newRole&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0xe3b5ddb80addb513b5c981e27bb030a86a8821ee&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;551ef860&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000073241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;deleteRole&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0xe3b5ddb80addb513b5c981e27bb030a86a8821ee&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;54b025c5&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000083241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;updateRole&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0xe3b5ddb80addb513b5c981e27bb030a86a8821ee&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;0xe3b5ddb80addb513b5c981e27bb030a86a8821ee&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;0xe3b5ddb80addb513b5c981e27bb030a86a8821ee&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0773e6ba&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;17b2e350&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;d9c090a0&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x00000000000000000000000000000000093241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;setRole&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0xe3b5ddb80addb513b5c981e27bb030a86a8821ee&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;a32710eb&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x000000000000000000000000000000000a3241b5&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;cancelRole&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0xe3b5ddb80addb513b5c981e27bb030a86a8821ee&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;a8319481&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x0000000000000000000000000000000000000001&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;sendTx&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0x0000000000000000000000000000000000000001&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;00000000&quot;</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;0x0000000000000000000000000000000000000002&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;createContract&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;0x0000000000000000000000000000000000000002&quot;</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;00000000&quot;</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -891,10 +1057,10 @@ option:
                                                 可由此地址进行配额的管理。 <strong><em>须保存好对应的私钥</em></strong></li>
 <li><code>0x00000000000000000000000000000000013241a4</code>: 代表权限管理系统合约地址，第一个数组为拥有发送交易权限的地址列表，第二个数组为拥有创建合约权限的地址列表。
                                                 用户可分别填入多个地址。 <strong><em>须保存好对应的私钥</em></strong></li>
-<li><code>0x00000000000000000000000000000000013241a5</code>: 代表CITA权限系统合约地址，用户可修改<code>0x33434ebd8799bc93f3623c7eb619350e41fb08d1</code>值为自己生成的地址，其为超级管理员地址，
-                                                可由此地址进行系统初始化管理等所有操作。如果此地址为空，则用户必须填写<code>[&quot;0xb3b5da596b4ba5caa603afd98c08c294a68ff34d&quot;]</code>值进行系统的初始化。 <strong><em>须保存好对应的私钥</em></strong></li>
+<li><code>0x0000000000000000000000000000000031415926</code>: 代表只读配置合约，三个参数分别代表系统合约生效需要的块数，默认为1代表下一个块生效；权限检查的开关，默认关闭；配额检查开关，默认为关闭。</li>
 <li><code>0x00000000000000000000000000000000013241b4</code>: 代表新CITA权限管理合约地址，用户可修改<code>0x9dcd6b234e2772c5451fd4ccf7582f4283140697</code>值为自己生成的地址，其为超级管理员地址，
                                                 此地址拥有权限管理本身的所有权限。 <strong><em>须保存好对应的私钥</em></strong></li>
+<li><code>0x00000000000000000000000000000000013241b5</code>: 代表权限合约地址，其中的多个地址分别代表系统内置的权限类型。</li>
 </ul>
 <h3 id="_5">使用默认的初始化数据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>用户可使用系统默认的初始化数据，即<code>init_data_example.json</code>文件，地址及其对应的私钥如下表所示:</p>
@@ -923,38 +1089,24 @@ option:
 <td align="center">0x0dbd369a741319fa5107733e2c9db9929093e3c7</td>
 </tr>
 <tr>
-<td align="center">b7eb833f2ac19d3dabf4375146a7ce0e983b9997a02557be05f224e22797419e</td>
-<td align="center">0x33434ebd8799bc93f3623c7eb619350e41fb08d1</td>
-</tr>
-<tr>
-<td align="center">33b471ddd9f4f524fa6015306acfaefbe8a054a26afde92480fd31c987dad3ce</td>
-<td align="center">0xb3b5da596b4ba5caa603afd98c08c294a68ff34d</td>
-</tr>
-<tr>
 <td align="center">993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9</td>
 <td align="center">0x9dcd6b234e2772c5451fd4ccf7582f4283140697</td>
 </tr>
 </tbody>
 </table>
 <h3 id="_6">用户自定义检查配置文件<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>用户可在本目录下创建<code>chain.toml</code>文件来自定义发送交易时是否检查账户的permission等，默认是需要检查的。格式参考<code>chain_check_example.toml</code>文件，如下:</p>
-<div class="highlight"><pre><span></span><span class="nv">check_permission</span> <span class="o">=</span> <span class="nb">true</span>
-<span class="nv">check_quota</span> <span class="o">=</span> <span class="nb">true</span>
-<span class="nv">check_prooftype</span> <span class="o">=</span> <span class="m">2</span>
+<p>用户可在本目录下创建<code>chain.toml</code>文件来自定义发送交易时是否检查账户的permission等，默认是需要检查的。格式参考<code>chain_config_example.toml</code>文件，如下:</p>
+<div class="highlight"><pre><span></span><span class="nv">prooftype</span> <span class="o">=</span> <span class="m">2</span>
 </pre></div>
 
-<p>也可在本目录下创建<code>executor.toml</code>文件来自定义journaldb的类型等。格式参考<code>executor_example.toml</code>文件，如下:</p>
-<div class="highlight"><pre><span></span><span class="nv">check_permission</span> <span class="o">=</span> <span class="nb">true</span>
-<span class="nv">check_quota</span> <span class="o">=</span> <span class="nb">true</span>
-<span class="nv">check_prooftype</span> <span class="o">=</span> <span class="m">2</span>
+<p>也可在本目录下创建<code>executor.toml</code>文件来自定义journaldb的类型等。格式参考<code>executor_config_example.toml</code>文件，如下:</p>
+<div class="highlight"><pre><span></span><span class="nv">prooftype</span> <span class="o">=</span> <span class="m">2</span>
 <span class="nv">journaldb_type</span> <span class="o">=</span> <span class="s2">&quot;archive&quot;</span>
 </pre></div>
 
 <p>其中:</p>
 <ul>
-<li><code>check_permission</code>: 表示发送交易时，是否检查账户拥有相应的权限，其中true表示打开检查，false表示关闭检查，默认为true。</li>
-<li><code>check_quota</code>: 表示发送交易时，是否检查块的gas和Account的gas是否超过上限，其中true表示打开检查，false表示关闭检查，默认为true。</li>
-<li><code>check_prooftype</code>: 表示当前使用的共识算法，0表示采用的Poa算法、1表示采用的Raft算法、2表示采用的Tendermint算法，默认采用Tendermint算法。</li>
+<li><code>prooftype</code>: 表示当前使用的共识算法，0表示采用的Poa算法、1表示采用的Raft算法、2表示采用的Tendermint算法，默认采用Tendermint算法。</li>
 <li><code>journaldb_type</code>: 表示当前使用的JournalDB算法，有"archive" "light" "fast" "basic"等4种类型，默认是archive。</li>
 </ul>
 <h3 id="_7">节点管理系统合约<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
@@ -1078,6 +1230,8 @@ Function signatures:
 <li>配置节点信息，如network.toml,jsonrpc.json等．</li>
 <li>确保无误，程序运行正确，备份最新的authorities文件.</li>
 </ol>
+<h4 id="_11">新权限管理系统合约<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>新权限系统合约存放在<code>install/scripts/contracts/permission_management</code>文件夹下，相关说明在<code>install/scripts/contracts/permission_management/README.md</code></p>
                 
                   
                 

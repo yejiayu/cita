@@ -504,6 +504,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#eth_getabi" title="eth_getAbi" class="md-nav__link">
+    eth_getAbi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#eth_newfilter" title="eth_newFilter" class="md-nav__link">
     eth_newFilter
   </a>
@@ -534,6 +541,33 @@
           <li class="md-nav__item">
   <a href="#eth_getfilterlogs" title="eth_getFilterLogs" class="md-nav__link">
     eth_getFilterLogs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accountabiabi" title="在Account中保存ABI和获取ABI" class="md-nav__link">
+    在Account中保存ABI和获取ABI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abi" title="保存ABI" class="md-nav__link">
+    保存ABI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abi_1" title="查询abi" class="md-nav__link">
+    查询abi
   </a>
   
 </li>
@@ -956,6 +990,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#eth_getabi" title="eth_getAbi" class="md-nav__link">
+    eth_getAbi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#eth_newfilter" title="eth_newFilter" class="md-nav__link">
     eth_newFilter
   </a>
@@ -986,6 +1027,33 @@
           <li class="md-nav__item">
   <a href="#eth_getfilterlogs" title="eth_getFilterLogs" class="md-nav__link">
     eth_getFilterLogs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accountabiabi" title="在Account中保存ABI和获取ABI" class="md-nav__link">
+    在Account中保存ABI和获取ABI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abi" title="保存ABI" class="md-nav__link">
+    保存ABI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abi_1" title="查询abi" class="md-nav__link">
+    查询abi
   </a>
   
 </li>
@@ -1067,6 +1135,7 @@
 <li>cita_getTransaction</li>
 <li>eth_getTransactionCount</li>
 <li>eth_getCode</li>
+<li>eth_getAbi</li>
 <li>eth_newFilter</li>
 <li>eth_newBlockFilter</li>
 <li>eth_uninstallFilter</li>
@@ -1713,6 +1782,37 @@ curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&
 </pre></div>
 
 <hr />
+<h3 id="eth_getabi">eth_getAbi<a class="headerlink" href="#eth_getabi" title="Permanent link">&para;</a></h3>
+<p>获取合约ABI</p>
+<ul>
+<li>
+<p>Parameters</p>
+</li>
+<li>
+<p><code>DATA</code>, 20 Bytes - address.</p>
+</li>
+<li>
+<p><code>QUANTITY|TAG</code> - integer block number(Hex string), or the string "latest", "earliest"</p>
+</li>
+<li>
+<p>Returns</p>
+</li>
+</ul>
+<p><code>DATA</code> - the abi from the given address.</p>
+<ul>
+<li>Example</li>
+</ul>
+<div class="highlight"><pre><span></span>curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getAbi&quot;,&quot;params&quot;:[&quot;73552bc4e960a1d53013b40074569ea05b950b4d&quot;, &quot;latest&quot;],&quot;id&quot;:1}&#39;</span>
+
+// Result:
+<span class="o">{</span>
+  <span class="s2">&quot;jsonrpc&quot;</span>: <span class="s2">&quot;2.0&quot;</span>,
+  <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+  <span class="s2">&quot;result&quot;</span>: <span class="s2">&quot;0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000&quot;</span>
+<span class="o">}</span>
+</pre></div>
+
+<hr />
 <h3 id="eth_newfilter">eth_newFilter<a class="headerlink" href="#eth_newfilter" title="Permanent link">&para;</a></h3>
 <p>Creates a filter object, based on filter options, to notify when the state changes (logs). To check if the state has changed, call eth_getFilterChanges.</p>
 <ul>
@@ -1855,6 +1955,72 @@ Additonally Filters timeout when they aren't requested with eth_getFilterChanges
 </ul>
 <p>see <a href="#eth_getFilterChanges">eth_getFilterChanges</a></p>
 <hr />
+<h2 id="accountabiabi">在Account中保存ABI和获取ABI<a class="headerlink" href="#accountabiabi" title="Permanent link">&para;</a></h2>
+<p>默认将接收方地址为<code>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</code>的交易为保存合约ABI交易类型。</p>
+<h3 id="abi">保存ABI<a class="headerlink" href="#abi" title="Permanent link">&para;</a></h3>
+<p>保存合约ABI到Account，主要步骤为：
+1.需要先成功创建合约，得到合约地址；
+2.使用solc编译合约代码得到ABI，以String类型编码成相应参数，详情见<a href="https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI">Ethereum Contract ABI</a>；
+3.构造交易data，前20字节为合约地址，后面字节为abi的编码成的bytes；
+4.发送交易，使用<code>cita_sendTransaction</code>接口；</p>
+<ul>
+<li>Example</li>
+</ul>
+<p>以<code>scripts/contracts/tests/contracts/test_example.sol</code>这个合约为例子，正常在链上创建该合约；</p>
+<ul>
+<li>首先可以通过solc得到合约的ABI；</li>
+</ul>
+<div class="highlight"><pre><span></span>solc --abi test_example.sol
+
+// Result
+<span class="o">[{</span><span class="s2">&quot;constant&quot;</span>:false,<span class="s2">&quot;inputs&quot;</span>:<span class="o">[{</span><span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;x&quot;</span>,<span class="s2">&quot;type&quot;</span>:<span class="s2">&quot;uint256&quot;</span><span class="o">}]</span>,<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;set&quot;</span>,<span class="s2">&quot;outputs&quot;</span>:<span class="o">[]</span>,<span class="s2">&quot;payable&quot;</span>:false,<span class="s2">&quot;stateMutability&quot;</span>:<span class="s2">&quot;nonpayable&quot;</span>,<span class="s2">&quot;type&quot;</span>:<span class="s2">&quot;function&quot;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&quot;constant&quot;</span>:true,<span class="s2">&quot;inputs&quot;</span>:<span class="o">[]</span>,<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;get&quot;</span>,<span class="s2">&quot;outputs&quot;</span>:<span class="o">[{</span><span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;type&quot;</span>:<span class="s2">&quot;uint256&quot;</span><span class="o">}]</span>,<span class="s2">&quot;payable&quot;</span>:false,<span class="s2">&quot;stateMutability&quot;</span>:<span class="s2">&quot;view&quot;</span>,<span class="s2">&quot;type&quot;</span>:<span class="s2">&quot;function&quot;</span><span class="o">}]</span>
+</pre></div>
+
+<ul>
+<li>将abi作为String类型，编码结果如下：</li>
+</ul>
+<div class="highlight"><pre><span></span>0x4ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000
+00000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275
+696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d7
+5746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c
+22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e743
+23536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e63
+74696f6e227d5d00000000000000000000000000000000000000000000000000
+</pre></div>
+
+<ul>
+<li>构造并发送交易到链上</li>
+</ul>
+<div class="highlight"><pre><span></span>// 前面20字节<span class="sb">`</span>73552bc4e960a1d53013b40074569ea05b950b4d<span class="sb">`</span>为合约地址，后面为abi
+python make_tx.py --code <span class="s2">&quot;73552bc4e960a1d53013b40074569ea05b950b4d4ed3885e000000000000000000000000000000000000000000000</span>
+<span class="s2">000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c7365</span>
+<span class="s2">2c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f75747</span>
+<span class="s2">0757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c22747970</span>
+<span class="s2">65223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f7</span>
+<span class="s2">57470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174</span>
+<span class="s2">654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000</span>
+<span class="s2">000000000&quot;</span> --to <span class="s2">&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;</span>  --privkey <span class="s2">&quot;352416e1c910e413768c51390dfd791b414212b7b4fe6b1a</span>
+<span class="s2">18f58007fa894214&quot;</span>
+
+python send_tx.py
+
+// Result
+--&gt; <span class="o">{</span><span class="s2">&quot;params&quot;</span>: <span class="o">[</span><span class="s2">&quot;0ad0030a286161616161616161616161616161616161616161616161616161616161616161616161616161616112013118fface20420ba022a980373552bc4e960a1d53013b40074569ea05b950b4d4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d000000000000000000000000000000000000000000000000001241a79c6b34aaa552ccbe99c1240ecf892a982fa337d26143f5485cb578f3972c426aaebd031d49b5ce32164422fd292957e183fa5933da8cb9eee426607e3314f101&quot;</span><span class="o">]</span>, <span class="s2">&quot;jsonrpc&quot;</span>: <span class="s2">&quot;2.0&quot;</span>, <span class="s2">&quot;method&quot;</span>: <span class="s2">&quot;cita_sendTransaction&quot;</span>, <span class="s2">&quot;id&quot;</span>: <span class="m">1</span><span class="o">}</span>
+&lt;-- <span class="o">{</span><span class="s2">&quot;jsonrpc&quot;</span>:<span class="s2">&quot;2.0&quot;</span>,<span class="s2">&quot;id&quot;</span>:1,<span class="s2">&quot;result&quot;</span>:<span class="o">{</span><span class="s2">&quot;hash&quot;</span>:<span class="s2">&quot;0x5ea7cf509ef5325bd58f737ab533c7fe5683c285a2d7b71dde90519f5640ae73&quot;</span>,<span class="s2">&quot;status&quot;</span>:<span class="s2">&quot;OK&quot;</span><span class="o">}}</span> <span class="o">(</span><span class="m">200</span> OK<span class="o">)</span>
+transaction <span class="nb">hash</span> 保存到../output/transaction/hash
+</pre></div>
+
+<h3 id="abi_1">查询abi<a class="headerlink" href="#abi_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span>curl -X POST --data &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getAbi&quot;,&quot;params&quot;:[&quot;73552bc4e960a1d53013b40074569ea05b950b4d&quot;, &quot;latest&quot;],&quot;id&quot;:1}&#39; 127.0.0.1:1337 | jq
+
+// Result:
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;result&quot;: &quot;0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000&quot;
+}
+</pre></div>
+
 <h2 id="rpc-errors">RPC Errors<a class="headerlink" href="#rpc-errors" title="Permanent link">&para;</a></h2>
 <h3 id="invalid-request">Invalid Request<a class="headerlink" href="#invalid-request" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span>// 正确方式：POST 方法

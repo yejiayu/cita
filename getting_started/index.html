@@ -269,15 +269,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker" title="安装docker" class="md-nav__link">
-    安装docker
+  <a href="#docker" title="安装 docker" class="md-nav__link">
+    安装 docker
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker_1" title="获取Docker镜像" class="md-nav__link">
-    获取Docker镜像
+  <a href="#docker_1" title="获取 Docker 镜像" class="md-nav__link">
+    获取 Docker 镜像
   </a>
   
 </li>
@@ -705,15 +705,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker" title="安装docker" class="md-nav__link">
-    安装docker
+  <a href="#docker" title="安装 docker" class="md-nav__link">
+    安装 docker
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker_1" title="获取Docker镜像" class="md-nav__link">
-    获取Docker镜像
+  <a href="#docker_1" title="获取 Docker 镜像" class="md-nav__link">
+    获取 Docker 镜像
   </a>
   
 </li>
@@ -792,16 +792,16 @@
                 <h1 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">依赖<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">系统平台要求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>CITA是基于Ubuntu 16.04稳定版开发的，在该系统版本上运行将是正确无误的。</p>
+<p>CITA 是基于 Ubuntu 16.04 稳定版开发的，在该系统版本上运行将是正确无误的。</p>
 <p>推荐使用 <code>docker</code> 编译和部署 <code>CITA</code>，保证环境一致。</p>
-<h3 id="docker">安装docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<h3 id="docker">安装 docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/install/">在线资料</a></p>
-<h3 id="docker_1">获取Docker镜像<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h3>
-<p>CITA的Docker镜像托管在 <a href="https://hub.docker.com/u/cita/dashboard/">DockerHub</a></p>
-<p>可以使用 <code>docker pull</code> 命令直接从DockerHub获取， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/pull.html">在线资料</a>。</p>
+<h3 id="docker_1">获取 Docker 镜像<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h3>
+<p>CITA 的 Docker 镜像托管在 <a href="https://hub.docker.com/r/cita/cita-build/">DockerHub</a></p>
+<p>可以使用 <code>docker pull</code> 命令直接从 DockerHub 获取， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/pull.html">在线资料</a>。</p>
 <p>对于内网环境，也可以通过 <code>docker save</code> 和 <code>docker load</code> 传递镜像， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/other.html">在线资料</a>。</p>
 <h3 id="_4">获取源码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>从Github仓库下载CITA的源代码，然后切换到CITA的源代码目录</p>
+<p>从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录</p>
 <div class="highlight"><pre><span></span>git pull https://github.com/cryptape/cita.git
 <span class="nb">cd</span> cita
 git submodule init
@@ -809,18 +809,20 @@ git submodule update
 </pre></div>
 
 <h3 id="docker-env-and-daemon">Docker env and daemon<a class="headerlink" href="#docker-env-and-daemon" title="Permanent link">&para;</a></h3>
-<p>在源码根目录下，我们提供了<code>env.sh</code>脚本，封装了docker相关的操作。</p>
-<p>运行此脚本，以实际要运行的命令作为参数，即表示在docker环境中运行相关命令。</p>
+<p>在源码根目录下，我们提供了<code>env.sh</code>脚本，封装了 docker 相关的操作。</p>
+<p>运行此脚本，以实际要运行的命令作为参数，即表示在 docker 环境中运行相关命令。</p>
 <p>例如：</p>
-<p><div class="highlight"><pre><span></span>./env.sh make debug
+<div class="highlight"><pre><span></span>./env.sh make debug
 </pre></div>
-即表示在docker环境中运行<code>make debug</code>。</p>
-<p>不带任何参数运行<code>./env.sh</code>，将直接获取一个docker环境的shell。</p>
+
+<p>即表示在 docker 环境中运行<code>make debug</code>。</p>
+<p>不带任何参数运行<code>./env.sh</code>，将直接获取一个 docker 环境的 shell。</p>
 <p>国内用户请使用 <code>env_cn.sh</code>，提供了编译时的国内镜像加速。</p>
 <p>还提供了<code>daemon.sh</code>,用法同<code>env.sh</code>，效果是后台运行。</p>
-<p>如果出现docker相关的报错，可以执行如下命令并重试：
+<p>如果出现 docker 相关的报错，可以执行如下命令并重试：</p>
 <div class="highlight"><pre><span></span>docker <span class="nb">kill</span> <span class="k">$(</span>docker ps -a -q<span class="k">)</span>
-</pre></div></p>
+</pre></div>
+
 <h2 id="_5">编译<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）</p>
 <div class="highlight"><pre><span></span>./env.sh make debug
@@ -837,7 +839,7 @@ git submodule update
 </pre></div>
 
 <p>发布件目录中的<code>admintool</code>工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。</p>
-<p>该工具默认生成的是本地4个节点的Demo示例配置：</p>
+<p>该工具默认生成的是本地 4 个节点的 Demo 示例配置：</p>
 <div class="highlight"><pre><span></span>./env.sh ./bin/admintool.sh
 </pre></div>
 
@@ -870,9 +872,10 @@ git submodule update
 <ol>
 <li>启动节点：</li>
 </ol>
-<p>该命令正常情况下不会返回，因此需要后台运行。
+<p>该命令正常情况下不会返回，因此需要后台运行。</p>
 <div class="highlight"><pre><span></span>./daemon.sh ./bin/cita start node0
-</pre></div></p>
+</pre></div>
+
 <ol>
 <li>停止节点：</li>
 </ol>
@@ -882,32 +885,34 @@ git submodule update
 <ol>
 <li>其他操作</li>
 </ol>
-<p>具体使用查看命令的帮助信息：
+<p>具体使用查看命令的帮助信息：</p>
 <div class="highlight"><pre><span></span>./env.sh ./bin/cita <span class="nb">help</span>
-</pre></div></p>
+</pre></div>
+
 <h2 id="_8">测试<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>除了上述的基本操作命令，为了方便用户对Demo进行相关测试，我们在目录<code>cita/tests/integreate_test</code>下提供了一些测试脚本。</p>
+<p>除了上述的基本操作命令，为了方便用户对 Demo 进行相关测试，我们在目录<code>cita/tests/integreate_test</code>下提供了一些测试脚本。</p>
 <p>以下命令在源码根目录下运行。</p>
 <ol>
-<li>
-<p>启动4个节点
+<li>启动 4 个节点</li>
+</ol>
 <div class="highlight"><pre><span></span>./env.sh tests/integrate_test/cita_start.sh
 </pre></div>
-该命令正常情况下不会返回，需要保持shell不退出。或者用<code>daemon.sh</code>运行。</p>
-</li>
-<li>
-<p>停止4个节点</p>
-</li>
+
+<p>该命令正常情况下不会返回，需要保持 shell 不退出。或者用<code>daemon.sh</code>运行。</p>
+<ol>
+<li>停止 4 个节点</li>
 </ol>
-<p>上一节中的命令中止，或者执行命令：
+<p>上一节中的命令中止，或者执行命令：</p>
 <div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_stop.sh
-</pre></div></p>
+</pre></div>
+
 <ol>
 <li>基本功能测试</li>
 </ol>
-<p>4个节点启动并成功出块，基本功能测试然后停止4个节点：
+<p>4 个节点启动并成功出块，基本功能测试然后停止 4 个节点：</p>
 <div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_basic.sh
-</pre></div></p>
+</pre></div>
+
 <ol>
 <li>发送交易测试</li>
 </ol>
@@ -917,9 +922,10 @@ git submodule update
 <ol>
 <li>拜占庭测试</li>
 </ol>
-<p>模拟网络异常情况下的功能测试。
+<p>模拟网络异常情况下的功能测试。</p>
 <div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_byzantinetest.sh
-</pre></div></p>
+</pre></div>
+
 <h2 id="_9">验证<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>查询节点个数</li>
@@ -952,7 +958,7 @@ git submodule update
 </pre></div>
 
 <p>返回块高度，表示节点已经开始正常出块。</p>
-<p>更多API（如合约调用、交易查询）请参见<a href="https://cryptape.github.io/cita/usage-guide/rpc">RPC调用</a>。</p>
+<p>更多 API（如合约调用、交易查询）请参见<a href="https://cryptape.github.io/cita/usage-guide/rpc">RPC 调用</a>。</p>
                 
                   
                 
