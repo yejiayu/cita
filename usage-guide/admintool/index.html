@@ -581,10 +581,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
-      架构设计
+      跨链
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-7">
+        跨链
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crosschain/crosschain_contract_example/" title="跨链合约编写及操作示例" class="md-nav__link">
+      跨链合约编写及操作示例
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      架构设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
         架构设计
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -648,15 +684,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../faq/" title="常见问题" class="md-nav__link">
+      常见问题
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-10">
       附录
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-10">
         附录
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1044,7 +1092,16 @@ option:
                 <span class="s2">&quot;00000000&quot;</span>
             <span class="p">]</span>
         <span class="p">]</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;0x00000000000000000000000000000000013241b6&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rootGroup&quot;</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;0x1a702a25c6bca72b67987968f0bfb3a3213c5688&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;0x0dbd369a741319fa5107733e2c9db9929093e3c7&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;0x9dcd6b234e2772c5451fd4ccf7582f4283140697&quot;</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1061,6 +1118,8 @@ option:
 <li><code>0x00000000000000000000000000000000013241b4</code>: 代表新CITA权限管理合约地址，用户可修改<code>0x9dcd6b234e2772c5451fd4ccf7582f4283140697</code>值为自己生成的地址，其为超级管理员地址，
                                                 此地址拥有权限管理本身的所有权限。 <strong><em>须保存好对应的私钥</em></strong></li>
 <li><code>0x00000000000000000000000000000000013241b5</code>: 代表权限合约地址，其中的多个地址分别代表系统内置的权限类型。</li>
+<li><code>0x00000000000000000000000000000000013241b6</code>: 代表用户管理合约地址，三个参数分别代表rootGroup的父Group、rootGroup的名称以及组内初始的用户地址。
+                                                用户可填入多个组内用户地址。 <strong><em>须保存好对应的私钥</em></strong></li>
 </ul>
 <h3 id="_5">使用默认的初始化数据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>用户可使用系统默认的初始化数据，即<code>init_data_example.json</code>文件，地址及其对应的私钥如下表所示:</p>
