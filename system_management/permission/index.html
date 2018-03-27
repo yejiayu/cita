@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://github.com/cryptape/cita/system_management/node/">
+        <link rel="canonical" href="https://github.com/cryptape/cita/system_management/permission/">
       
       
         <meta name="author" content="Cryptape">
@@ -36,7 +36,7 @@
     
     
       
-        <title>节点管理 - CITA</title>
+        <title>权限管理 - CITA</title>
       
     
     
@@ -100,7 +100,7 @@
                 CITA
               </span>
               <span class="md-header-nav__topic">
-                节点管理
+                权限管理
               </span>
             
           
@@ -414,6 +414,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../node/" title="节点管理" class="md-nav__link">
+      节点管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -425,11 +437,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        节点管理
+        权限管理
       </label>
     
-    <a href="./" title="节点管理" class="md-nav__link md-nav__link--active">
-      节点管理
+    <a href="./" title="权限管理" class="md-nav__link md-nav__link--active">
+      权限管理
     </a>
     
       
@@ -443,31 +455,31 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="普通节点管理 (白名单)" class="md-nav__link">
-    普通节点管理 (白名单)
+  <a href="#_2" title="权限管理概述" class="md-nav__link">
+    权限管理概述
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="相关操作" class="md-nav__link">
-    相关操作
+  <a href="#_3" title="权限管理合约接口" class="md-nav__link">
+    权限管理合约接口
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" title="添加普通节点" class="md-nav__link">
-    添加普通节点
+  <a href="#_4" title="操作类接口" class="md-nav__link">
+    操作类接口
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="删除普通节点" class="md-nav__link">
-    删除普通节点
+  <a href="#_5" title="查询类接口" class="md-nav__link">
+    查询类接口
   </a>
   
 </li>
@@ -483,17 +495,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="共识节点管理" class="md-nav__link">
-    共识节点管理
+  <a href="#_6" title="角色管理概述" class="md-nav__link">
+    角色管理概述
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" title="共识节点管理合约接口" class="md-nav__link">
-    共识节点管理合约接口
+  <a href="#_7" title="角色管理合约接口" class="md-nav__link">
+    角色管理合约接口
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="操作类接口" class="md-nav__link">
+    操作类接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="查询类接口" class="md-nav__link">
+    查询类接口
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -508,18 +540,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../permission/" title="权限管理" class="md-nav__link">
-      权限管理
-    </a>
   </li>
 
         
@@ -729,31 +749,31 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="普通节点管理 (白名单)" class="md-nav__link">
-    普通节点管理 (白名单)
+  <a href="#_2" title="权限管理概述" class="md-nav__link">
+    权限管理概述
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="相关操作" class="md-nav__link">
-    相关操作
+  <a href="#_3" title="权限管理合约接口" class="md-nav__link">
+    权限管理合约接口
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" title="添加普通节点" class="md-nav__link">
-    添加普通节点
+  <a href="#_4" title="操作类接口" class="md-nav__link">
+    操作类接口
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="删除普通节点" class="md-nav__link">
-    删除普通节点
+  <a href="#_5" title="查询类接口" class="md-nav__link">
+    查询类接口
   </a>
   
 </li>
@@ -769,17 +789,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="共识节点管理" class="md-nav__link">
-    共识节点管理
+  <a href="#_6" title="角色管理概述" class="md-nav__link">
+    角色管理概述
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" title="共识节点管理合约接口" class="md-nav__link">
-    共识节点管理合约接口
+  <a href="#_7" title="角色管理合约接口" class="md-nav__link">
+    角色管理合约接口
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="操作类接口" class="md-nav__link">
+    操作类接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="查询类接口" class="md-nav__link">
+    查询类接口
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -802,91 +842,470 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/cryptape/cita/docs/docs/system_management/node.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/cryptape/cita/docs/docs/system_management/permission.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">节点管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，再广播至其他节点，共识完成后即被确认为合法区块。普通节点不参与共识，只同步链上所有的原始数据。</p>
-<p>公有链没有节点准入机制，意味着任何节点都可以接入链并同步其全部的数据，在满足一定的条件下都可以参加共识。而 CITA 对于共识节点和普通节点都进行了准入管理。对于身份验证失败的节点，即使该节点能够在网络层与其他 CITA 节点连通，这些 CITA 节点也会拒绝与之建立通讯会话，如此可避免信息泄漏。</p>
-<h2 id="_2">普通节点管理 (白名单)<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>目前 CITA 对于节点的准入管理采用白名单的方式。每个节点本地保存节点白名单配置文件，其中记录着允许连接的p2p通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。</p>
-<h3 id="_3">相关操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h4 id="_4">添加普通节点<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>编辑节点目录下 <code>network.toml</code> ，添加一个 <code>peers</code> 条目，<code>cita-network</code> 会监控文件的修改自动加载最新的配置。<code>peers</code> 条目示例:</p>
-<div class="highlight"><pre><span></span>[[peers]]
-id_card = 4
-ip = &quot;127.0.0.1&quot;
-port = 4004
-</pre></div>
-
-<h4 id="_5">删除普通节点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p>到对应节点目录下，找到 <code>network.toml</code>，删除对应 <code>peers</code> 条目即可。</p>
-<h2 id="_6">共识节点管理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>CITA 作为一个面向企业级应用的区块链框架，需要保证监管方能够获得相关的权限对共识节点进行管理，包括增加、删除共识节点等操作。对于共识服务方面，需要对其提供实时读取共识节点列表的接口，而中心化管理的方式无法保证各个节点的共识节点列表的安全性及一致性。CITA 采用合约的方式来实现共识节点的管理，通过区块链上的合约可以保证共识节点的安全性及一致性。</p>
-<p>在 CITA 初始化创世块阶段，需要初始化一个管理员地址，其拥有管理员角色，将其写入到每个节点的创世块文件中，共识节点管理合约拥有的一个固定地址也写入其中。创世块内容在初始化以后不允许被修改。区块链正常启动之后，将合约写入到创世块中。链外的操作人员可以通过调用 RPC 接口来实现对共识节点的管理。</p>
-<p>对于共识节点的管理，包括添加、删除及获得共识节点。</p>
+                <h1 id="_1">权限管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>CITA实现了对账户的权限管理，并支持基于角色的权限管理。</p>
+<p>CITA通过智能合约的方式来对权限进行管理。</p>
+<h2 id="_2">权限管理概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>权限(permission)在此系统中的定义为多个资源(resource)的集合，其中资源(resource)为一个合约地址及一个函数签名。</p>
+<p>用户可自定义权限，其中系统内置了几种权限(禁止对其进行删除操作)，如下所示：</p>
 <ul>
-<li>添加操作分为发起和确认，节点先调用发起请求，申请成为共识节点，由管理员(拥有管理员角色的账号)确认才完成了添加操作;</li>
-<li>删除操作只可由管理员执行;</li>
-<li>共识服务可获得共识节点列表。</li>
+<li><code>sendTx</code>: 表示发交易的权限</li>
+<li><code>createContract</code>: 表示创建合约的权限</li>
+<li><code>newPermission</code>: 表示创建一个新的权限的权限</li>
+<li><code>deletePermission</code>: 表示删除一个权限的权限</li>
+<li><code>updatePermission</code>: 表示更新一个权限的权限</li>
+<li><code>setAuth</code>: 表示对账号进行授权的权限</li>
+<li><code>cancelAuth</code>: 表示对帐号取消授权的权限</li>
+<li><code>newRole</code>: 表示创建一个新的角色的权限</li>
+<li><code>deleteRole</code>: 表示删除一个角色的权限</li>
+<li><code>updateRole</code>: 表示更新一个角色的权限</li>
+<li><code>setRole</code>: 表示对账号授予角色的权限</li>
+<li><code>cancelRole</code>: 表示对帐号取消授予的角色的权限</li>
 </ul>
-<p>普通节点安装生成后申请成为共识节点，需要进行以下操作：</p>
-<ul>
-<li>将账号地址提交给管理员;</li>
-<li>节点发起一个记录其为共识节点的合约，并由管理员完成确认; </li>
-<li>和其他节点共同修改本地节点白名单;</li>
-<li>等待区块数据同步完成后即可参与下一次的共识。</li>
-</ul>
-<h3 id="_7">共识节点管理合约接口<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>系统内置了superAdmin的帐号，其拥有以上所有权限，可对其进行正常的权限管理。</p>
+<h3 id="_3">权限管理合约接口<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_4">操作类接口<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <table>
   <tr>
     <th>名称</th>
     <th>需要权限</th>
-    <th>传入参数</th>
+    <th>入参</th>
     <th>返回值</th>
     <th>详细描述</th>
   </tr>
   <tr>
-    <td>newNode(address)<br/><strong>准备共识节点</strong> </td>
-    <td>普通角色</td>
-    <td>新增节点地址</td>
-    <td>操作是否成功 (bool)</td>
-    <td>成功后新节点准备成为共识节点，并将其记录在合约共识节点列表中，同时节点将处于 new 状态</td>
-  </tr>
-  <tr>
-    <td>approveNode(address) <br/> <strong>确认共识节点</strong></td>
-    <td>管理员角色</td>
-    <td>新增共识节点地址</td>
-    <td>操作是否成功 (bool)</td>
-    <td>新节点成功准备后，可调用此方法确认节点成为共识节点，同时节点将处于 consensus 状态</td>
-  </tr>
-  <tr>
-    <td>deleteNode(address) <br/> <strong>删除共识节点</strong></td>
-    <td>管理员角色</td>
-    <td>节点地址</td>
-    <td>操作是否成功 (bool)</td>
-    <td>成功后节点将从节点列表中删除，同时节点将处于 close 状态</td>
-  </tr>
-  <tr>
-    <td>listNode() <br/> <strong>获取共识节点列表</strong></td>
-    <td>普通角色(只读)</td>
-    <td>空</td>
-    <td>地址列表(address[])</td>
-    <td>获取共识节点列表，即状态为 consensus 的节点</td>
-  </tr>
-  <tr>
-    <td>getStatus(address) <br/> <strong>获得节点状态</strong></td>
-    <td>普通角色(只读)</td>
-    <td>节点地址</td>
     <td>
-      节点的状态 (uint8):
-      <ul>
-        <li>0: close 状态</li>
-        <li>1: new 状态</li>
-        <li>2: consensus 状态</li>
-      </ul>
+      newPermission(name, conts, funcs) <br/>
+      <strong>创建新权限</strong>
     </td>
-    <td>获取共识节点状态</td>
+    <td>newPermission</td>
+    <td>
+      name: 权限的名称
+      <br/>
+      conts: 权限包含的合约地址的集合
+      <br/>
+      funcs: 权限包含的的函数签名的集合
+    </td>
+    <td>新权限的地址 (Address)</td>
+    <td>成功后即生成了一个新的权限类型</td>
+  </tr>
+  <tr>
+    <td>
+      deletePermission(permission) <br/>
+      <strong>删除权限</strong>
+    </td>
+    <td>deletePermission</td>
+    <td>permission: 权限地址 </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后权限不可用</td>
+  </tr>
+  <tr>
+    <td>
+      updatePermissionName(permission, name) <br/>
+      <strong>更新权限名称</strong>
+    </td>
+    <td>updatePermission</td>
+    <td>
+      permission: 权限地址
+      <br/>
+      name: 新的权限名称
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>更新权限的名称，新名称可任意指定，权限之间的名称可重复</td>
+  </tr>
+  <tr>
+    <td>
+      addResources(permission, conts. funcs) <br/>
+      <strong>添加资源</strong>
+    </td>
+    <td>updatePermission</td>
+    <td>
+      permission: 操作的权限对象
+      <br/>
+      conts: 添加的合约地址的集合
+      <br/>
+      funcs: 添加的函数签名的集合
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后为指定的权限添加新的资源</td>
+  </tr>
+  <tr>
+    <td>
+      deleteResources(permission, conts. funcs) <br/>
+      <strong>删除资源</strong>
+    </td>
+    <td>updatePermission</td>
+    <td>
+      permission: 操作的权限对象
+      <br/>
+      conts: 删除的合约地址的集合
+      <br/>
+      funcs: 删除的函数签名的集合
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后删除指定权限的指定资源</td>
+  </tr>
+  <tr>
+    <td>
+      setAuthorization(account, permission) <br/>
+      <strong>授权</strong>
+    </td>
+    <td>setAuth</td>
+    <td>
+      account: 授权的帐号对象
+      <br/>
+      permission: 授权的权限对象
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号拥有所授予的权限</td>
+  </tr>
+  <tr>
+    <td>
+      setAuthorizations(account, permissions) <br/>
+      <strong>多次授权</strong>
+    </td>
+    <td>setAuth</td>
+    <td>
+      account: 授权的帐号对象
+      <br/>
+      permissions: 授权的权限对象的集合
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号拥有所授予的权限集合</td>
+  </tr>
+  <tr>
+    <td>
+      cancelAuthorization(account, permission) <br/>
+      <strong>取消授权</strong>
+    </td>
+    <td>cancelAuth</td>
+    <td>
+      account: 取消授权的帐号对象
+      <br/>
+      permissions: 取消授权的权限对象
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号不再拥有此权限</td>
+  </tr>
+  <tr>
+    <td>
+      cancelAuthorizations(account, permissions) <br/>
+      <strong>多次取消授权</strong>
+    </td>
+    <td>cancelAuth</td>
+    <td>
+      account: 取消授权的帐号对象
+      <br/>
+      permissions: 取消授权的权限对象集合
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号不再拥有此权限集合</td>
+  </tr>
+  <tr>
+    <td>
+      clearAuthorization(account) <br/>
+      <strong>取消账户的所有授权</strong>
+    </td>
+    <td>cancelAuth</td>
+    <td>
+      account: 取消授权的帐号对象
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号不再拥有任何权限</td>
+  </tr>
+</table>
+
+<h4 id="_5">查询类接口<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>查询类接口的调用不需要权限。</p>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>入参</th>
+    <th>返回值</th>
+    <th>详细描述</th>
+  </tr>
+  <tr>
+    <td>
+      queryAllAccounts()<br/>
+      <strong>查询所有帐号</strong>
+    </td>
+    <td>None</td>
+    <td>所有拥有权限的账号集合</td>
+    <td>查询到的账号为权限管理记录的所有帐号</td>
+  </tr>
+  <tr>
+    <td>
+      queryPermissions(account) <br/>
+      <strong>查询帐号权限</strong>
+    </td>
+    <td>
+      account: 查询的帐号
+    </td>
+    <td>帐号拥有的权限集合</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryAccounts(permission) <br/>
+      <strong>查询拥有权限的账号</strong>
+    </td>
+    <td>permission: 权限地址</td>
+    <td>拥有此权限的所有帐号集合</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      checkPermission(account, cont, func) <br/>
+      <strong>检查权限</strong>
+    </td>
+    <td>
+      account: 鉴权的帐号对象
+      <br/>
+      cont: 合约地址
+      <br/>
+      func: 函数签名
+    </td>
+    <td>判断此帐号是否拥有执行此合约函数的权限</td>
+    <td>其中合约地址及函数签名组成了一个资源</td>
+  </tr>
+  <tr>
+    <td>
+      inPermission(permission, cont, func) <br/>
+      <strong>检查权限</strong>
+    </td>
+    <td>
+      permission: 判断的权限对象
+      <br/>
+      cont: 合约地址
+      <br/>
+      func: 函数签名
+    </td>
+    <td>判断此权限是否拥有合约及函数</td>
+    <td>其中合约地址及函数签名组成了一个资源</td>
+  </tr>
+  <tr>
+    <td>
+      queryInfo()<br/>
+      <strong>查询权限信息</strong>
+    </td>
+    <td>None</td>
+    <td>权限的所有信息</td>
+    <td>信息包括名称及包含的资源集合</td>
+  </tr>
+  <tr>
+    <td>
+      queryName()<br/>
+      <strong>查询权限名称</strong>
+    </td>
+    <td>None</td>
+    <td>权限的名称</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryResource()<br/>
+      <strong>查询权限资源</strong>
+    </td>
+    <td>None</td>
+    <td>权限的资源</td>
+    <td>None</td>
+  </tr>
+</table>
+
+<h2 id="_6">角色管理概述<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>在权限之上封装了一层更贴近于现实生活中的角色类型，角色包含多种权限。可对用户赋予角色，则用户拥有角色内的所有权限。</p>
+<ul>
+<li>角色的增删改等相关操作独立于权限管理。操作需要权限管理赋予相应权限，不会造成权限管理的变动。</li>
+<li>关于角色的授权操作： 授予角色时会调用权限管理的授权接口，所以会造成权限管理的变动。 <strong><em>建议角色的授权与权限的授权二者选其一，应该尽量避免同时使用</em></strong></li>
+<li>关于角色的鉴权： 鉴权是在底层操作，底层没有角色的概念，鉴权与权限管理统一。</li>
+</ul>
+<p>用户可自定义角色。</p>
+<h3 id="_7">角色管理合约接口<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="_8">操作类接口<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>需要权限</th>
+    <th>入参</th>
+    <th>返回值</th>
+    <th>详细描述</th>
+  </tr>
+  <tr>
+    <td>
+      newRole(name, permissions)<br/>
+      <strong>新建角色</strong>
+    </td>
+    <td>None</td>
+    <td>
+      name: 角色名称
+      <br/>
+      permissions: 权限集合
+    </td>
+    <td>新建的角色的地址</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      deleteRole(role) <br/>
+      <strong>删除角色</strong>
+    </td>
+    <td>Node/cancelAuthorization</td>
+    <td>
+      role: 角色地址
+    </td>
+    <td>删除是否成功 (bool)</td>
+    <td>如果角色已经被授予帐号则需要cancelAuthorization，否则则不需要权限</td>
+  </tr>
+  <tr>
+    <td>
+      updateRoleName(role, name) <br/>
+      <strong>更新角色名称</strong>
+    </td>
+    <td>None</td>
+    <td>
+      role: 更新的角色
+      <br/>
+      name: 更新的新的角色的名称 
+    </td>
+    <td>更新是否成功 (bool)</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      addPermissions(role, permissions) <br/>
+      <strong>添加角色权限</strong>
+    </td>
+    <td>setAuthorization/None</td>
+    <td>
+      role: 角色
+      <br/>
+      permissions: 添加的权限集合
+    </td>
+    <td>添加是否成功 (bool)</td>
+    <td>如果角色已经被授予帐号则需要setAuthorization，否则则不需要权限</td>
+  </tr>
+  <tr>
+    <td>
+      deletePermissions(role, permissions) <br/>
+      <strong>添加角色权限</strong>
+    </td>
+    <td>cancelAuthorization/None</td>
+    <td>
+      role: 角色
+      <br/>
+      permissions: 删除的权限集合
+    </td>
+    <td>删除是否成功 (bool)</td>
+    <td>如果角色已经被授予帐号则需要cancelAuthorization，否则则不需要权限</td>
+  </tr>
+  <tr>
+    <td>
+      setRole(account, role) <br/>
+      <strong>设置角色</strong>
+    </td>
+    <td>setAuthorization</td>
+    <td>
+      account: 设置角色的帐号对象
+      <br/>
+      role: 设置的角色
+    </td>
+    <td>设置是否成功 (bool)</td>
+    <td>调用权限管理，把role内的所有permission依次授予account</td>
+  </tr>
+  <tr>
+    <td>
+      cancelRole(account, role) <br/>
+      <strong>取消设置角色</strong>
+    </td>
+    <td>cancelAuthorization</td>
+    <td>
+      account: 取消设置角色的帐号对象
+      <br/>
+      role: 取消设置的角色
+    </td>
+    <td>取消设置是否成功 (bool)</td>
+    <td>调用权限管理，把role内的所有permission依次取消授予account</td>
+  </tr>
+  <tr>
+    <td>
+      clearRole(account) <br/>
+      <strong>取消帐号所有的角色</strong>
+    </td>
+    <td>cancelAuthorization</td>
+    <td>
+      account: 取消设置角色的帐号对象
+    </td>
+    <td>取消设置是否成功 (bool)</td>
+    <td>调用权限管理，把account所有的role内的所有permission依次取消授予account</td>
+  </tr>
+</table>
+
+<h4 id="_9">查询类接口<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>入参</th>
+    <th>返回值</th>
+    <th>详细描述</th>
+  </tr>
+  <tr>
+    <td>
+      queryRoles(account)<br/>
+      <strong>查询帐号所有的角色</strong>
+    </td>
+    <td>account: 查询的帐号</td>
+    <td>所有账号拥有的角色集合</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryAccounts(role) <br/>
+      <strong>查询拥有此角色的所有帐号</strong>
+    </td>
+    <td>
+      role: 查询的角色
+    </td>
+    <td>帐号集合</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryAccounts(permission) <br/>
+      <strong>查询拥有权限的账号</strong>
+    </td>
+    <td>permission: 权限地址</td>
+    <td>拥有此权限的所有帐号集合</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryRole() <br/>
+      <strong>查询角色信息</strong>
+    </td>
+    <td>None</td>
+    <td>角色的信息集合</td>
+    <td>信息包括角色名称和权限列表</td>
+  </tr>
+  <tr>
+    <td>
+      queryName()<br/>
+      <strong>查询角色名称</strong>
+    </td>
+    <td>None</td>
+    <td>角色的名称</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryPermissions()<br/>
+      <strong>查询角色权限</strong>
+    </td>
+    <td>None</td>
+    <td>角色的权限集合</td>
+    <td>None</td>
   </tr>
 </table>
                 
@@ -907,7 +1326,7 @@ port = 4004
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../usage-guide/txtool/" title="交易相关工具 (Transaction Tool)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../node/" title="节点管理" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -916,19 +1335,19 @@ port = 4004
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                交易相关工具 (Transaction Tool)
+                节点管理
               </span>
             </div>
           </a>
         
         
-          <a href="../permission/" title="权限管理" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../quota/" title="配额管理" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                权限管理
+                配额管理
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

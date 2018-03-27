@@ -560,8 +560,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../system_management/account/" title="帐号管理 (Account)" class="md-nav__link">
-      帐号管理 (Account)
+    <a href="../../system_management/permission/" title="权限管理" class="md-nav__link">
+      权限管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../system_management/quota/" title="配额管理" class="md-nav__link">
+      配额管理
     </a>
   </li>
 
@@ -900,7 +912,7 @@ option:
 <span class="s1">    default value is &#39;</span><span class="m">127</span>.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003<span class="s1">&#39;</span>
 
 <span class="s1">-n consensus_name  name of consensus algorithm</span>
-<span class="s1">    default value is &#39;</span>tendermint<span class="s1">&#39;, other is &#39;</span>raft<span class="s1">&#39; and &#39;</span>poa<span class="s1">&#39;</span>
+<span class="s1">    default value is &#39;</span>cita-bft<span class="s1">&#39;, other is &#39;</span>raft<span class="s1">&#39; and &#39;</span>poa<span class="s1">&#39;</span>
 
 <span class="s1">-m crypto_method    name of crypto algorithm</span>
 <span class="s1">    default value is &#39;</span>SECP<span class="s1">&#39;</span>
@@ -908,7 +920,7 @@ option:
 <span class="s1">-d block_duration    block generating duration(millisecond)</span>
 <span class="s1">    default value is &#39;</span><span class="m">3000</span><span class="s1">&#39;</span>
 
-<span class="s1">-t            consensus test flag, only valid for tendermint</span>
+<span class="s1">-t            consensus test flag, only valid for cita-bft</span>
 
 <span class="s1">-h enable jsonrpc http</span>
 <span class="s1">   default enable &#39;</span>true<span class="s1">&#39;</span>
@@ -1198,7 +1210,7 @@ Function signatures:
 <h3 id="_8">配额管理系统合约<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>配额管理合约存放在<code>install/scripts/contracts/system/quota_manager.sol</code>，合约详情如下所示：</p>
 <div class="highlight"><pre><span></span>contract address: 0x00000000000000000000000000000000013241a3
-    Function signatures: 
+    Function signatures:
     <span class="m">70480275</span>: addAdmin<span class="o">(</span>address<span class="o">)</span>
     dae99b3a: getAccountGasLimit<span class="o">()</span>
     776dd3b6: getAccountQuota<span class="o">(</span>address<span class="o">)</span>
