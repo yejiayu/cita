@@ -466,14 +466,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" title="权限管理系统合约" class="md-nav__link">
-    权限管理系统合约
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" title="单独增加节点" class="md-nav__link">
+  <a href="#_9" title="单独增加节点" class="md-nav__link">
     单独增加节点
   </a>
   
@@ -481,8 +474,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" title="新权限管理系统合约" class="md-nav__link">
-    新权限管理系统合约
+  <a href="#_10" title="权限管理系统合约" class="md-nav__link">
+    权限管理系统合约
   </a>
   
 </li>
@@ -843,14 +836,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" title="权限管理系统合约" class="md-nav__link">
-    权限管理系统合约
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" title="单独增加节点" class="md-nav__link">
+  <a href="#_9" title="单独增加节点" class="md-nav__link">
     单独增加节点
   </a>
   
@@ -858,8 +844,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" title="新权限管理系统合约" class="md-nav__link">
-    新权限管理系统合约
+  <a href="#_10" title="权限管理系统合约" class="md-nav__link">
+    权限管理系统合约
   </a>
   
 </li>
@@ -967,14 +953,6 @@ option:
         <span class="p">]</span>
     <span class="p">],</span>
     <span class="nt">&quot;0x00000000000000000000000000000000013241a3&quot;</span><span class="p">:</span> <span class="s2">&quot;0xd3f1a71d1d8f073f4e725f57bbe14d67da22f888&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;0x00000000000000000000000000000000013241a4&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">[</span>
-            <span class="s2">&quot;0x1a702a25c6bca72b67987968f0bfb3a3213c5688&quot;</span>
-        <span class="p">],</span>
-        <span class="p">[</span>
-            <span class="s2">&quot;0x0dbd369a741319fa5107733e2c9db9929093e3c7&quot;</span>
-        <span class="p">]</span>
-    <span class="p">],</span>
     <span class="nt">&quot;0x0000000000000000000000000000000031415926&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="mi">1</span><span class="p">,</span>
         <span class="kc">false</span><span class="p">,</span>
@@ -1124,8 +1102,6 @@ option:
                                                 可由此地址进行共识节点的增删。 <strong><em>须保存好对应的私钥</em></strong></li>
 <li><code>0x00000000000000000000000000000000013241a3</code>: 代表配额管理系统合约地址，用户可修改<code>0xd3f1a71d1d8f073f4e725f57bbe14d67da22f888</code>值为自己生成的地址，其为配额管理的管理员地址，
                                                 可由此地址进行配额的管理。 <strong><em>须保存好对应的私钥</em></strong></li>
-<li><code>0x00000000000000000000000000000000013241a4</code>: 代表权限管理系统合约地址，第一个数组为拥有发送交易权限的地址列表，第二个数组为拥有创建合约权限的地址列表。
-                                                用户可分别填入多个地址。 <strong><em>须保存好对应的私钥</em></strong></li>
 <li><code>0x0000000000000000000000000000000031415926</code>: 代表只读配置合约，三个参数分别代表系统合约生效需要的块数，默认为1代表下一个块生效；权限检查的开关，默认关闭；配额检查开关，默认为关闭。</li>
 <li><code>0x00000000000000000000000000000000013241b4</code>: 代表新CITA权限管理合约地址，用户可修改<code>0x9dcd6b234e2772c5451fd4ccf7582f4283140697</code>值为自己生成的地址，其为超级管理员地址，
                                                 此地址拥有权限管理本身的所有权限。 <strong><em>须保存好对应的私钥</em></strong></li>
@@ -1152,14 +1128,6 @@ option:
 <td align="center">0xd3f1a71d1d8f073f4e725f57bbe14d67da22f888</td>
 </tr>
 <tr>
-<td align="center">866c936ff332228948bdefc15b1877c88e0effce703ee6de898cffcafe9bbe25</td>
-<td align="center">0x1a702a25c6bca72b67987968f0bfb3a3213c5688</td>
-</tr>
-<tr>
-<td align="center">352416e1c910e413768c51390dfd791b414212b7b4fe6b1a18f58007fa894214</td>
-<td align="center">0x0dbd369a741319fa5107733e2c9db9929093e3c7</td>
-</tr>
-<tr>
 <td align="center">993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9</td>
 <td align="center">0x9dcd6b234e2772c5451fd4ccf7582f4283140697</td>
 </tr>
@@ -1181,128 +1149,44 @@ option:
 <li><code>journaldb_type</code>: 表示当前使用的JournalDB算法，有"archive" "light" "fast" "basic"等4种类型，默认是archive。</li>
 </ul>
 <h3 id="_7">节点管理系统合约<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>节点管理合约存放在<code>install/scripts/contracts/node_manager.sol</code>，函数签名可通过<code>solc node_manager.sol --hashes</code>编译得到，也可以在<a href="https://remix.ethereum.org">remix</a>上查看.
-node_manager.sol合约详情如下所示：</p>
-<div class="highlight"><pre><span></span>contract address: 0x00000000000000000000000000000000013241a2
-Function signatures:
-    dd4c97a0: approveNode<span class="o">(</span>address<span class="o">)</span>
-    2d4ede93: deleteNode<span class="o">(</span>address<span class="o">)</span>
-    30ccebb5: getStatus<span class="o">(</span>address<span class="o">)</span>
-    609df32f: listNode<span class="o">()</span>
-    ddad2ffe: newNode<span class="o">(</span>address<span class="o">)</span>
-    645b8b1b: status<span class="o">(</span>address<span class="o">)</span>
+<p>节点管理合约存放在<code>install/scripts/contracts/node_manager.sol</code>，函数签名可通过<code>solc node_manager.sol --hashes</code>编译得到，也可以在<a href="https://remix.ethereum.org">remix</a>上查看。</p>
+<p>node_manager.sol合约详情如下所示：</p>
+<div class="highlight"><pre><span></span>contract address: <span class="nv">0x00000000000000000000000000000000013241a2</span>
+<span class="o">=======</span> node_manager.sol:NodeManager <span class="o">=======</span>
+Function signatures: 
+<span class="m">70480275</span>: addAdmin<span class="o">(</span>address<span class="o">)</span>
+dd4c97a0: approveNode<span class="o">(</span>address<span class="o">)</span>
+2d4ede93: deleteNode<span class="o">(</span>address<span class="o">)</span>
+30ccebb5: getStatus<span class="o">(</span>address<span class="o">)</span>
+24d7806c: isAdmin<span class="o">(</span>address<span class="o">)</span>
+609df32f: listNode<span class="o">()</span>
+ddad2ffe: newNode<span class="o">(</span>address<span class="o">)</span>
+645b8b1b: status<span class="o">(</span>address<span class="o">)</span>
 </pre></div>
 
-<p>节点管理合约的目的是为了能够动态增删节点，即在已经运行的一些节点中增加或删除节点，这可以通过调用合约中的方法实现。
-合约中节点有三种状态：Close，Ready，Start，初始默认为Close，可以通过调用合约里的函数来改变节点状态。
-比如，增加节点，申请者首先调用newNode()方法，审批者(共识节点)调用approveNode来同意该节点成为共识节点。下面介绍下合约中主要的几种方法：</p>
-<ul>
-<li>
-<p><code>newNode(address)</code>，该方法功能是申请成为共识节点，其中参数address表示申请节点的地址，申请者通过cita_sendTransaction调用合约上的该方法，此时节点状态变更为Ready；</p>
-</li>
-<li>
-<p><code>approveNode(address)</code>，该方法功能是同意其成为共识节点，其中参数address表示状态为Ready的节点地址，审批者(共识节点)通过cita_sendTransaction。调用该方法来同意节点状态为Ready的节点加入共识，此时节点状态变更为Start；</p>
-</li>
-<li>
-<p><code>deleteNode(address)</code>， 该方法功能是删除共识节点，其中参数address表示状态Start的节点地址，状态为Start的节点可通过cita_sendTransaction。调用合约上该方法来退出共识，此时节点状态变更为Close。</p>
-</li>
-</ul>
+<p>共识节点管理的相关描述及方法介绍见<a href="https://cryptape.github.io/cita/system_management/node/index.html#_6">node_manager</a></p>
 <h3 id="_8">配额管理系统合约<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>配额管理合约存放在<code>install/scripts/contracts/system/quota_manager.sol</code>，合约详情如下所示：</p>
-<div class="highlight"><pre><span></span>contract address: 0x00000000000000000000000000000000013241a3
-    Function signatures:
-    <span class="m">70480275</span>: addAdmin<span class="o">(</span>address<span class="o">)</span>
-    dae99b3a: getAccountGasLimit<span class="o">()</span>
-    776dd3b6: getAccountQuota<span class="o">(</span>address<span class="o">)</span>
-    54f6127f: getData<span class="o">(</span>bytes32<span class="o">)</span>
-    6cf72948: getSpecialUsers<span class="o">()</span>
-    7a490f7e: getUsersQuota<span class="o">()</span>
-    3a5b5cf3: getblockGasLimit<span class="o">()</span>
-    24d7806c: isAdmin<span class="o">(</span>address<span class="o">)</span>
-    dfa87425: setAccountGasLimit<span class="o">(</span>address,uint256<span class="o">)</span>
-    a69257f3: setBlockGasLimit<span class="o">(</span>uint256<span class="o">)</span>
-    e64eca2b: setGlobal<span class="o">(</span>bytes32,uint256<span class="o">)</span>
-    c9bcec77: setGlobalAccountGasLimit<span class="o">(</span>uint256<span class="o">)</span>
-    748ba8dd: setIsGlobal<span class="o">(</span>bytes32,bool<span class="o">)</span>
-    be0266cd: setSpecial<span class="o">(</span>address,bytes32,uint256<span class="o">)</span>
+<p>配额管理合约存放在<code>install/scripts/contracts/system/quota_manager.sol</code>，合约函数hash详情如下所示：</p>
+<div class="highlight"><pre><span></span>contract address: <span class="nv">0x00000000000000000000000000000000013241a3</span>
+<span class="o">=======</span> quota_manager.sol:QuotaManager <span class="o">=======</span>
+Function signatures: 
+<span class="m">70480275</span>: addAdmin<span class="o">(</span>address<span class="o">)</span>
+942a8ad3: getAQL<span class="o">(</span>address<span class="o">)</span>
+8a48ac03: getAccounts<span class="o">()</span>
+0bc8982f: getBQL<span class="o">()</span>
+bd9fbe7b: getDefaultAQL<span class="o">()</span>
+cdbcff6d: getQuotas<span class="o">()</span>
+24d7806c: isAdmin<span class="o">(</span>address<span class="o">)</span>
+499a1bcd: setAQL<span class="o">(</span>address,uint256<span class="o">)</span>
+931cd0cc: setBQL<span class="o">(</span>uint256<span class="o">)</span>
+b107ea12: setDefaultAQL<span class="o">(</span>uint256<span class="o">)</span>
 </pre></div>
 
-<p>配额管理合约为每个block和account设置gasLimit，其中block中的gasLimit有效地控制该区块中的交易数量，account中的gasLimit有效地控制该用户在当前区块中发送的交易数量，
-显然，account中的gasLimit是小于等于block中的gasLimit。用户分为specialUser和globalUser，其中specialUser的gasLimit默认值等于block的gasLimit，即只要不达到区块的gasLimit，
-可以任意发送交易。而globalUser的gasLimit默认值要远小于block的gasLimit。另外，还有一类管理员账户，可设置block和account的gasLimit。
-合约的主要方法如下：</p>
-<ul>
-<li>
-<p><code>addAdmin(address)</code>，该方法为添加管理账户，只有发送交易的用户为管理员才能成功添加其他用户为管理员，通过cita_sendTransaction调用。</p>
-</li>
-<li>
-<p><code>setAccountGasLimit(address,uint256)</code>，该方法为设置其他用户的gasLimit，只有身份为管理员的地址才可以通过cita_sendTransaction成功调用。</p>
-</li>
-<li>
-<p><code>setBlockGasLimit(uint256)</code>，该方法为设置区块的gasLimit，只有身份为管理员的地址才可以通过cita_sendTransaction成功调用。</p>
-</li>
-<li>
-<p><code>getData(bytes32)</code>，该方法为查询用户或区块的gasLimit，所有地址都可以通过eth_call成功调用此方法。</p>
-</li>
-<li>
-<p><code>getSpecialUsers()</code>，该方法为查询所有specical用户，所有地址都可以通过eth_call成功调用此方法。</p>
-</li>
-<li>
-<p><code>getUsersQuota()</code>，该方法为查询special用户对应的gasLimit，即配额，所有地址都可以通过eth_call成功调用此方法。</p>
-</li>
-<li>
-<p><code>getAccountQuota(address)</code>，该方法为查询指定用户对应的gasLimit，即配额，所有地址都可以通过eth_call成功调用此方法。</p>
-</li>
-<li>
-<p><code>getAccountGasLimit()</code>，该方法为查询AccountGasLimit，即配额，所有地址都可以通过eth_call成功调用此方法。</p>
-</li>
-<li>
-<p><code>getblockGasLimit()</code>，该方法为查询blockGasLimit，即配额，所有地址都可以通过eth_call成功调用此方法。</p>
-</li>
-</ul>
-<h3 id="_9">权限管理系统合约<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>权限管理合约存放在<code>install/scripts/contracts/permission_manager.sol</code>，该合约将权限管理引进系统，有效控制用户交易的权限，合约详情如下所示：</p>
-<div class="highlight"><pre><span></span>contract address: 0x00000000000000000000000000000000013241a4
-Function signatures:
-    301da870: grantPermission<span class="o">(</span>address,uint8<span class="o">)</span>
-    54ad6352: queryPermission<span class="o">(</span>address<span class="o">)</span>
-    6f4eaf7a: queryUsersOfPermission<span class="o">(</span>uint8<span class="o">)</span>
-    dd8a8a05: revokePermission<span class="o">(</span>address,uint8<span class="o">)</span>
-</pre></div>
-
-<p>目前该合约的权限管理功能比较简单，权限共有两种：发送交易和创建合约（Send, Create）。每个地址默认没有这两种权限，可通过有权限的地址授权获得其中一种或两种权限。
-比如，授予Create权限，已经拥有Create权限的地址可调用合约中的grantPermission()方法，来给其他地址授予Create权限。
-合约中的方法介绍如下：</p>
-<ul>
-<li>
-<p><code>grantPermission(address,uint8)</code>，该方法是授予某种权限，其中参数中的address表示授予权限的地址，uint8表示权限名称，拥有该权限的地址可通过cita_sendTransaction调用该方法来授予其他地址该权限。</p>
-</li>
-<li>
-<p><code>revokePermission(address,uint8)</code>，该方法是取消某种权限，其中参数address表示取消权限的地址，uint8表示权限名称，拥有该权限的地址可通过cita_sendTransaction调用该方法来取消其他地址该权限。</p>
-</li>
-<li>
-<p><code>queryPermission(address)</code>，该方法是查询指定地址的权限，可通过eth_call调用该方法来查询。</p>
-</li>
-<li>
-<p><code>queryUsersOfPermission(uint8)</code>， 该方法是查询拥有指定权限的所有用户，可通过eth_call调用该方法来查询。</p>
-</li>
-</ul>
-<h3 id="_10">单独增加节点<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>主要原理:新增节点先以只读节点的身份介入，然后通过发送身份验证（交易）控制新节点权限. 并且，单独增加节点需要依赖已有的节点信息如:authorities，genesis.json</p>
-<p>步骤</p>
-<ol>
-<li>确保已有数据不被破坏，请复制install/backup,install/bin, install/scripts三个文件及其内容到另外的目录．</li>
-<li>运行命令：
-    <div class="highlight"><pre><span></span>./bin/admintool.sh -Q <span class="o">[</span>nodeId<span class="o">]</span>
-
- 如./bin/admintool.sh -Q <span class="m">8</span>
-</pre></div>
-   在当前目录会生成指定节点的目录以及相关信息，随之生成最新的authorities文件.</li>
-<li>配置节点信息，如network.toml,jsonrpc.json等．</li>
-<li>确保无误，程序运行正确，备份最新的authorities文件.</li>
-</ol>
-<h4 id="_11">新权限管理系统合约<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p>新权限系统合约存放在<code>install/scripts/contracts/permission_management</code>文件夹下，相关说明在<code>install/scripts/contracts/permission_management/README.md</code></p>
+<p>配额管理的相关描述及方法介绍见<a href="https://cryptape.github.io/cita/system_management/quota/index.html">quota_manager</a></p>
+<h3 id="_9">单独增加节点<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>相关描述及操作见<a href="https://cryptape.github.io/cita/system_management/node/index.html#_2">普通节点管理</a></p>
+<h4 id="_10">权限管理系统合约<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>新权限系统合约存放在<code>install/scripts/contracts/permission_management</code>文件夹下，相关接口说明在<code>install/scripts/contracts/permission_management/README.md</code>，详细的接口说明见<a href="https://cryptape.github.io/cita/system_management/permission/index.html">permission_management</a></p>
                 
                   
                 

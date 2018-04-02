@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://github.com/cryptape/cita/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>https://github.com/cryptape/cita/getting_started/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,13 +21,13 @@
         
     <url>
      <loc>https://github.com/cryptape/cita/key-concepts/blockchain/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/key-concepts/cita/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -36,7 +36,7 @@
     
     <url>
      <loc>https://github.com/cryptape/cita/components/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -45,37 +45,37 @@
         
     <url>
      <loc>https://github.com/cryptape/cita/usage-guide/bootstrap/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/usage-guide/smart-contract-guide/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/usage-guide/rpc/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/usage-guide/rpc_error_code/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/usage-guide/admintool/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/usage-guide/txtool/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -85,19 +85,19 @@
         
     <url>
      <loc>https://github.com/cryptape/cita/system_management/node/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/system_management/permission/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/system_management/quota/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -107,7 +107,7 @@
         
     <url>
      <loc>https://github.com/cryptape/cita/crosschain/crosschain_contract_example/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -117,25 +117,25 @@
         
     <url>
      <loc>https://github.com/cryptape/cita/architecture/architecture/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/architecture/consensus/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/architecture/transaction_process/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/architecture/view/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -144,7 +144,7 @@
     
     <url>
      <loc>https://github.com/cryptape/cita/faq/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -153,13 +153,13 @@
         
     <url>
      <loc>https://github.com/cryptape/cita/appendix/contributing/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/cryptape/cita/appendix/glossary/index.html</loc>
-     <lastmod>2018-03-30</lastmod>
+     <lastmod>2018-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
