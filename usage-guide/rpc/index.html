@@ -1356,27 +1356,16 @@
 <h4 id="bytecode">获得合约对应的bytecode<a class="headerlink" href="#bytecode" title="Permanent link">&para;</a></h4>
 <p>以下代码片段为示例代码，具体获取contract bytecode的方法参考<a href="https://ethereum.stackexchange.com/questions/8115/how-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser">文档</a></p>
 <p><a href="https://solidity.readthedocs.io/en/develop/">solidity</a>相关文档</p>
-<div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">18</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">SimpleStorage</span> <span class="p">{</span>
     <span class="kt">uint</span> <span class="n">storedData</span><span class="p">;</span>
-    <span class="kd">event</span> <span class="n">Init</span><span class="p">(</span><span class="kt">address</span><span class="p">,</span> <span class="kt">uint</span><span class="p">);</span>
-    <span class="kd">event</span> <span class="n">Set</span><span class="p">(</span><span class="kt">address</span><span class="p">,</span> <span class="kt">uint</span><span class="p">);</span>
 
-    <span class="kd">function</span> <span class="n">SimpleStorage</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">storedData</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-        <span class="n">Init</span><span class="p">(</span><span class="nb">msg</span><span class="p">.</span><span class="n">sender</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="kd">event</span> <span class="n">Stored</span><span class="p">(</span><span class="kt">uint</span><span class="p">);</span>
-
-    <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="kt">uint</span> <span class="n">x</span><span class="p">)</span>  <span class="p">{</span>
-        <span class="n">Stored</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="kt">uint</span> <span class="n">x</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
         <span class="n">storedData</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
-        <span class="n">Set</span><span class="p">(</span><span class="nb">msg</span><span class="p">.</span><span class="n">sender</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="n">get</span><span class="p">()</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">uint</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="n">get</span><span class="p">()</span> <span class="kr">view</span> <span class="kr">public</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">uint</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">storedData</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -1384,7 +1373,7 @@
 
 <h4 id="_3">构造签名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ol>
-<li>构造Transaction对象tx，填充to, nonce, valid_until_block, data 4个字段。</li>
+<li>构造Transaction对象tx，填充to, nonce, valid_until_block, quota, data, verion 6个字段。</li>
 <li>tx对象protobuf序列化后 sha3 -&gt; hash</li>
 <li>对 hash 进行签名 -&gt; signature</li>
 <li>构造UnverifiedTransaction, 使用hash, signature, SECP填充UnverifiedTransaction  -&gt; unverify_tx</li>
@@ -1398,8 +1387,18 @@ tx.setdata<span class="o">(</span>data<span class="o">)</span><span class="p">;<
 <span class="k">if</span> not depoly_contract <span class="o">{</span>
     tx.setTo<span class="o">(</span>address<span class="o">)</span><span class="p">;</span>
 <span class="o">}</span>
-tx.set_valid_until_block<span class="o">(</span><span class="m">9999999</span><span class="o">)</span><span class="p">;</span>
+
+// current_block_height 可以通过CITA JSON-RPC接口 cita_blockNumber 获取
+<span class="nb">let</span> <span class="nv">valid_util_block</span> <span class="o">=</span> current_block_height + <span class="m">88</span><span class="p">;</span>
+tx.set_valid_until_block<span class="o">(</span>valid_util_block<span class="o">)</span><span class="p">;</span>
+
 tx.set_nonce<span class="o">(</span>nonce<span class="o">)</span><span class="p">;</span>
+
+// 如果是solidity合约，可以通过solc --gas获取估算gas值，在此基础上加50%，或者在remix中运行获取的实际消耗gas上加一点
+tx.set_quota<span class="o">(</span>quota<span class="o">)</span><span class="p">;</span>
+
+// 当前version 默认为0
+tx.set_version<span class="o">(</span>verison<span class="o">)</span><span class="p">;</span>
 
 // language_depend_method和sign 分别是相应的语言或库中处理私钥和签名的方法
 <span class="nb">let</span> <span class="nv">privkey</span> <span class="o">=</span> language_depend_method<span class="o">(</span><span class="s2">&quot;966fc50326cf6e2b30b06d8214737fcc2cda5bdce84eb23e14b6dbf3540d3f84&quot;</span><span class="o">)</span><span class="p">;</span>
@@ -1414,7 +1413,7 @@ unverify_tx.crypto <span class="o">=</span> SECP<span class="p">;</span>
 </pre></div>
 
 <h4 id="_4">签名后的交易<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span>0a9b0412013018fface20420f73b2a8d046060604052341561000f57600080fd5b5b60646000819055507f8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3336064604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b5b610178806100956000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b1146100495780636d4ce63c1461006c575b600080fd5b341561005457600080fd5b61006a6004808035906020019091905050610095565b005b341561007757600080fd5b61007f610142565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055507ffd28ec3ec2555238d8ad6f9faf3e4cd10e574ce7e7ef28b73caa53f9512f65b93382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b50565b6000805490505b905600a165627a7a72305820631927ec00e7a86b68950c2304ba2614a8dcb84780b339fc2bfe442bba418ce800291241884bfdfd8e417ab286fd761d42b71a9544071d91084c56f9063471ce82e266122a8f9a24614e1cf75070eea301bf1e7a65857def86093b6892e09ae7d0bcdff901
+<div class="highlight"><pre><span></span>0a910212013218fface20420a0492a8302606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da200291241edd3fb02bc1e844e1a6743e8986a61e1d8a584aac26db5fa1ce5b32700eba5d16ba4c754731f43692f3f5299e85176627e55b9f61f5fe3e43572ec8c535b0d9201
 </pre></div>
 
 <ul>
@@ -1425,14 +1424,14 @@ unverify_tx.crypto <span class="o">=</span> SECP<span class="p">;</span>
 <li>Example</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="c1">// Request</span>
-<span class="nx">curl</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="o">--</span><span class="nx">data</span> <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;cita_sendTransaction&quot;,&quot;params&quot;:[&quot;0a9b0412013018fface20420f73b2a8d046060604052341561000f57600080fd5b5b60646000819055507f8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3336064604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b5b610178806100956000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b1146100495780636d4ce63c1461006c575b600080fd5b341561005457600080fd5b61006a6004808035906020019091905050610095565b005b341561007757600080fd5b61007f610142565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055507ffd28ec3ec2555238d8ad6f9faf3e4cd10e574ce7e7ef28b73caa53f9512f65b93382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b50565b6000805490505b905600a165627a7a72305820631927ec00e7a86b68950c2304ba2614a8dcb84780b339fc2bfe442bba418ce800291241884bfdfd8e417ab286fd761d42b71a9544071d91084c56f9063471ce82e266122a8f9a24614e1cf75070eea301bf1e7a65857def86093b6892e09ae7d0bcdff901&quot;],&quot;id&quot;:1}&#39;</span>
+<span class="nx">curl</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="o">--</span><span class="nx">data</span> <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;cita_sendTransaction&quot;,&quot;params&quot;:[&quot;0a910212013218fface20420a0492a8302606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da200291241edd3fb02bc1e844e1a6743e8986a61e1d8a584aac26db5fa1ce5b32700eba5d16ba4c754731f43692f3f5299e85176627e55b9f61f5fe3e43572ec8c535b0d9201&quot;],&quot;id&quot;:1}&#39;</span>
 
 <span class="c1">// Result</span>
 <span class="p">{</span>
   <span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">&quot;result&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;hash&quot;</span><span class="o">:</span> <span class="s2">&quot;0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hash&quot;</span><span class="o">:</span> <span class="s2">&quot;0x4b5d67c1debdd5899fc7b5cd77e71987b8a2d174b361ca2dd4d713434b4ff037&quot;</span><span class="p">,</span>
     <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;OK&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -1929,7 +1928,7 @@ curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&
 <ul>
 <li>Example</li>
 </ul>
-<div class="highlight"><pre><span></span>curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_newFilter&quot;,&quot;params&quot;:[{&quot;topics&quot;:[&quot;0x12341234&quot;]}],&quot;id&quot;:73}&#39;</span>
+<div class="highlight"><pre><span></span>curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_newFilter&quot;,&quot;params&quot;:[{&quot;topics&quot;:[&quot;0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3&quot;]}],&quot;id&quot;:1}&#39;</span>
 
 // Result
 <span class="o">{</span>

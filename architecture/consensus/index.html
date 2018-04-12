@@ -623,37 +623,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tendermint" title="Tendermint算法" class="md-nav__link">
-    Tendermint算法
+  <a href="#cita-bft" title="CITA-BFT算法" class="md-nav__link">
+    CITA-BFT算法
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tendermint_1" title="Tendermint状态转换" class="md-nav__link">
-    Tendermint状态转换
+  <a href="#cita-bft_1" title="CITA-BFT状态转换" class="md-nav__link">
+    CITA-BFT状态转换
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tendermint_2" title="Tendermint交易池操作流程" class="md-nav__link">
-    Tendermint交易池操作流程
+  <a href="#cita-bft_2" title="CITA-BFT交易池操作流程" class="md-nav__link">
+    CITA-BFT交易池操作流程
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tendermint_3" title="Tendermint故障重启流程" class="md-nav__link">
-    Tendermint故障重启流程
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#citatendermint" title="CITA对Tendermint的优化" class="md-nav__link">
-    CITA对Tendermint的优化
+  <a href="#cita-bft_3" title="CITA-BFT故障重启流程" class="md-nav__link">
+    CITA-BFT故障重启流程
   </a>
   
 </li>
@@ -830,37 +823,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tendermint" title="Tendermint算法" class="md-nav__link">
-    Tendermint算法
+  <a href="#cita-bft" title="CITA-BFT算法" class="md-nav__link">
+    CITA-BFT算法
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tendermint_1" title="Tendermint状态转换" class="md-nav__link">
-    Tendermint状态转换
+  <a href="#cita-bft_1" title="CITA-BFT状态转换" class="md-nav__link">
+    CITA-BFT状态转换
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tendermint_2" title="Tendermint交易池操作流程" class="md-nav__link">
-    Tendermint交易池操作流程
+  <a href="#cita-bft_2" title="CITA-BFT交易池操作流程" class="md-nav__link">
+    CITA-BFT交易池操作流程
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tendermint_3" title="Tendermint故障重启流程" class="md-nav__link">
-    Tendermint故障重启流程
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#citatendermint" title="CITA对Tendermint的优化" class="md-nav__link">
-    CITA对Tendermint的优化
+  <a href="#cita-bft_3" title="CITA-BFT故障重启流程" class="md-nav__link">
+    CITA-BFT故障重启流程
   </a>
   
 </li>
@@ -889,7 +875,7 @@
                 
                 <h1 id="_1">共识<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>CITA的共识模块主要是保证多个节点对于交易的顺序和Block的内容达成一致。在众多的分布式算法中，
-我们选择实现了非拜占庭容错的Raft算法和拜占庭容错的的Tendermint算法。</p>
+我们选择实现了非拜占庭容错的Raft算法和拜占庭容错的的CITA-BFT算法。</p>
 <h2 id="_2">共识的架构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>共识主要有MQ(消息队列)通讯模块、交易池、定时模块、WAL(write ahead log)、算法逻辑模块。</p>
 <div class="highlight"><pre><span></span>   +-------------+       +-------------+       +-----+
@@ -909,7 +895,7 @@
 <p><strong>定时模块</strong>： 提供算法定时服务。使用者向定时模块发送定时请求，定时模块在时间到达后，发送确认信息。</p>
 <p><strong>WAL</strong>： WAL提供预写日志(write ahead log)的服务，持久化各个节点的投票。用来进行节点崩溃后恢复。</p>
 <p><strong>算法逻辑模块</strong>： 分布式算法逻辑的实现模块，接受共识其它模块发送过来的信息，根据自身的算法要求，进行算法逻辑相应的处理。
-例如对于Tendermint就需要进行一系列的状态转换。</p>
+例如对于CITA-BFT就需要进行一系列的状态转换。</p>
 <h2 id="_3">基本前提<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>每个共识节点知道其它共识节点的公钥</li>
@@ -942,12 +928,12 @@
 <li>主节点收到&frac12;+确认后，发送确认信息给从节点。</li>
 <li>主节点持久化和发送Block到Chain进行计算。</li>
 </ol>
-<h2 id="tendermint">Tendermint算法<a class="headerlink" href="#tendermint" title="Permanent link">&para;</a></h2>
-<p>Tendermint是一种专为区块链设计的高性能共识算法，基于半同步网络假设，Tendermint在保证活性和安全性（Liveness &amp; Safety）的前提下能够容忍&#8531;的拜占庭节点。
+<h2 id="cita-bft">CITA-BFT算法<a class="headerlink" href="#cita-bft" title="Permanent link">&para;</a></h2>
+<p>CITA-BFT是一种专为区块链设计的高性能共识算法，基于半同步网络假设，CITA-BFT在保证活性和安全性（Liveness &amp; Safety）的前提下能够容忍&#8531;的拜占庭节点。
 CITA共识节点通过点对点共识消息交换协议对每一个区块交换投票信息，迅速形成多数共识。投票结果最后会被记录在区块里。CITA支持独有的低延迟技术，能够实现
 毫秒级交易确认延迟。</p>
-<h3 id="tendermint_1">Tendermint状态转换<a class="headerlink" href="#tendermint_1" title="Permanent link">&para;</a></h3>
-<p>Tendermint是一种状态机副本复制算法(State Machine Replication)，在实现上包括以下几个状态：</p>
+<h3 id="cita-bft_1">CITA-BFT状态转换<a class="headerlink" href="#cita-bft_1" title="Permanent link">&para;</a></h3>
+<p>CITA-BFT是一种状态机副本复制算法(State Machine Replication)，在实现上包括以下几个状态：</p>
 <div class="highlight"><pre><span></span>    NewHeight -&gt; (Propose -&gt; Prevote -&gt; Precommit)+ -&gt; Commit -&gt; NewHeight -&gt; ...
 </pre></div>
 
@@ -971,8 +957,8 @@ CITA共识节点通过点对点共识消息交换协议对每一个区块交换�
    +--------------------------------------------------------------------+
 </pre></div>
 
-<p>Tendermint是随着块的高度增长，多种状态的依次循环的过程。在决定某个高度的块的过程中，可能需要一轮或者多轮的投票。
-下面介绍Tendermint在块高度H和第R轮上，进行块的共识的主要流程:</p>
+<p>CITA-BFT是随着块的高度增长，多种状态的依次循环的过程。在决定某个高度的块的过程中，可能需要一轮或者多轮的投票。
+下面介绍CITA-BFT在块高度H和第R轮上，进行块的共识的主要流程:</p>
 <ol>
 <li>proposal阶段：proposal节点打包交易池中的交易，WAL记录后，通过MQ通讯模块，发送proposal消息给共识的其它节点，然后进入prevote阶段。而非proposal节点在进行一段时间的超时后，进入prevote投票阶段。</li>
 <li>prevote阶段：每个共识节点根据收到的proposal信息，进行prevote投票。校验成功则prevote block.hash，校验失败或者没有收到proposal信息则prevote空票。</li>
@@ -981,7 +967,7 @@ CITA共识节点通过点对点共识消息交换协议对每一个区块交换�
 <li>precommit等待阶段：等待收到的precommit投票数超过节点数的&#8532;。如果收到precommit相同block.hash投票超过&#8532;时，进入commit阶段。否则进入新一轮的proposal的阶段。</li>
 <li>commit阶段：共识模块把共识完成的block发送给chain模块后，等待chain模块的计算完成后发送的状态信息，然后进入下一个高度 NewHeight。</li>
 </ol>
-<h3 id="tendermint_2">Tendermint交易池操作流程<a class="headerlink" href="#tendermint_2" title="Permanent link">&para;</a></h3>
+<h3 id="cita-bft_2">CITA-BFT交易池操作流程<a class="headerlink" href="#cita-bft_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>交易池启动时，尝试从KV数据库恢复数据</li>
 <li>交易池订阅MQ的交易信息</li>
@@ -989,16 +975,12 @@ CITA共识节点通过点对点共识消息交换协议对每一个区块交换�
 <li>交易池收到打包请求，检查交易的有效性，输出有效交易列表</li>
 <li>交易池根据出块的交易列表，删除已经上链的交易</li>
 </ol>
-<h3 id="tendermint_3">Tendermint故障重启流程<a class="headerlink" href="#tendermint_3" title="Permanent link">&para;</a></h3>
+<h3 id="cita-bft_3">CITA-BFT故障重启流程<a class="headerlink" href="#cita-bft_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>从WAL模块中，恢复某个块高度的投票信息</li>
 <li>根据恢复后的状态信息，重复投票信息</li>
 <li>进程根据当前状态，继续运行</li>
 </ol>
-<h3 id="citatendermint">CITA对Tendermint的优化<a class="headerlink" href="#citatendermint" title="Permanent link">&para;</a></h3>
-<p>Tendermint算法实践上比较优秀，CITA结合联盟链和本身的特定，对其进行了优化。
-比如CITA优化了commit阶段的Block广播，使用Chain模块计算交易后的状态消息作为出块成功的标志。
-避免了一次的全网的广播，减少对下个高度Block同步的影响。</p>
                 
                   
                 

@@ -833,7 +833,7 @@
                 <h1 id="cita-features">CITA Features<a class="headerlink" href="#cita-features" title="Permanent link">&para;</a></h1>
 <p>CITA(Cryptape Inter-enterprise Trust Automation)是一个面向企业级应用的支持智能合约的区块链框架，可以为企业级区块链应用提供一个稳固、高效、灵活、可适应未来的运行平台。</p>
 <h2 id="_1">共识<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>CITA的共识模块实现了两种共识算法，非拜占庭容错的Raft算法和拜占庭容错的Tendermint算法。</p>
+<p>CITA的共识模块实现了两种共识算法，非拜占庭容错的Raft算法和拜占庭容错的CITA-BFT算法。</p>
 <ul>
 <li>Raft算法</li>
 </ul>
@@ -841,11 +841,11 @@
   follower的append成功响应时，将此交易提交，并保存到交易池。当leader接收到chain发送的status信息时，准备打包交易出块。如果leader所在的节点chain异常，
   则会触发新的选举流程。</p>
 <ul>
-<li>Tendermint算法</li>
+<li>CITA-BFT算法</li>
 </ul>
-<p>Tendermint是PBFT算法的变种。每个节点轮流打包交易并出块，在每个高度上，只有一个块可以被提交。
+<p>CITA-BFT是一种经过了区块链适应性改造和调优的BFT算法。每个节点轮流打包交易并出块，在每个高度上，只有一个块可以被提交。
   当块无法在该轮被提交时，协议会移动到下一轮，由新的节点负责提议一个该高度的块。当超过&#8532;的验证节点对同一个块precommit，该块才能够被提交。
-  Tendermint算法可以容忍网络中少于总节点&#8531;的拜占庭节点。</p>
+  CITA-BFT算法可以容忍网络中少于总节点&#8531;的拜占庭节点。</p>
 <h2 id="_2">智能合约<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>CITA对智能合约的执行器分为两类，一种是解释性合约执行器，另一种是原生合约的执行器，以满足不同用户场景的业务需求。</p>
 <ul>
