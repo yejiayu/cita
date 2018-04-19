@@ -598,6 +598,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../user/index.html" title="用户管理" class="md-nav__link">
+      用户管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../quota/index.html" title="配额管理" class="md-nav__link">
       配额管理
     </a>
@@ -1256,6 +1268,9 @@ result返回给用户john的所有权限，包括sendTx、createContract以及0x
 <li><code>updateRole</code>: 表示更新一个角色的权限</li>
 <li><code>setRole</code>: 表示对账号授予角色的权限</li>
 <li><code>cancelRole</code>: 表示对帐号取消授予的角色的权限</li>
+<li><code>newGroup</code>: 表示创建一个新的组的权限</li>
+<li><code>deleteGroup</code>: 表示删除一个组的权限</li>
+<li><code>updateGroup</code>: 表示更新一个组的权限</li>
 </ul>
 <p>系统内置了superAdmin的帐号，其拥有以上所有权限，可对其进行正常的权限管理。默认配置情况下其他普通账户也拥有以上权限，建议在初始化CITA系统前对权限管理进行配置。</p>
 <h3 id="_9">权限管理合约接口<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
@@ -1736,13 +1751,13 @@ result返回给用户john的所有权限，包括sendTx、createContract以及0x
           </a>
         
         
-          <a href="../quota/index.html" title="配额管理" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../user/index.html" title="用户管理" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                配额管理
+                用户管理
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
