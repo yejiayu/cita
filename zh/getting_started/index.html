@@ -11,6 +11,8 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
+        <link rel="canonical" href="https://github.com/cryptape/cita/zh/getting_started/index.html">
+      
       
         <meta name="author" content="Cryptape">
       
@@ -29,22 +31,22 @@
       
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
-      <link rel="shortcut icon" href="/cryptape/cita/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
     
     
       
-        <title>CITA</title>
+        <title>快速入门 - CITA</title>
       
     
     
-      <link rel="stylesheet" href="/cryptape/cita/assets/stylesheets/application.bcabdff3.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
       
-        <link rel="stylesheet" href="/cryptape/cita/assets/stylesheets/application-palette.792431c1.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
       
     
     
-      <script src="/cryptape/cita/assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -54,7 +56,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="/cryptape/cita/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
   </head>
@@ -98,7 +100,7 @@
                 CITA
               </span>
               <span class="md-header-nav__topic">
-                
+                快速入门
               </span>
             
           
@@ -168,7 +170,9 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -177,7 +181,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/cryptape/cita/zh/index.html" title="中文" class="md-tabs__link">
+        <a href="../index.html" title="中文" class="md-tabs__link md-tabs__link--active">
           中文
         </a>
       
@@ -190,7 +194,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/cryptape/cita/en/index.html" title="EN" class="md-tabs__link">
+        <a href="../../en/index.html" title="EN" class="md-tabs__link">
           EN
         </a>
       
@@ -247,10 +251,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     
     <label class="md-nav__link" for="nav-1">
       中文
@@ -268,7 +274,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/index.html" title="首页" class="md-nav__link">
+    <a href="../index.html" title="首页" class="md-nav__link">
       首页
     </a>
   </li>
@@ -278,11 +284,123 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/getting_started/index.html" title="快速入门" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        快速入门
+      </label>
+    
+    <a href="index.html" title="快速入门" class="md-nav__link md-nav__link--active">
       快速入门
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="依赖" class="md-nav__link">
+    依赖
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="系统平台要求" class="md-nav__link">
+    系统平台要求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="安装 docker" class="md-nav__link">
+    安装 docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" title="获取 Docker 镜像" class="md-nav__link">
+    获取 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="获取源码" class="md-nav__link">
+    获取源码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-env-and-daemon" title="Docker env and daemon" class="md-nav__link">
+    Docker env and daemon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="编译" class="md-nav__link">
+    编译
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="生成节点配置" class="md-nav__link">
+    生成节点配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="运行节点" class="md-nav__link">
+    运行节点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="测试" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="验证" class="md-nav__link">
+    验证
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -311,7 +429,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/key-concepts/blockchain/index.html" title="区块链 (Blockchain)" class="md-nav__link">
+    <a href="../key-concepts/blockchain/index.html" title="区块链 (Blockchain)" class="md-nav__link">
       区块链 (Blockchain)
     </a>
   </li>
@@ -323,7 +441,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/key-concepts/cita/index.html" title="CITA" class="md-nav__link">
+    <a href="../key-concepts/cita/index.html" title="CITA" class="md-nav__link">
       CITA
     </a>
   </li>
@@ -340,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/components/index.html" title="系统组件" class="md-nav__link">
+    <a href="../components/index.html" title="系统组件" class="md-nav__link">
       系统组件
     </a>
   </li>
@@ -371,7 +489,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/usage-guide/bootstrap/index.html" title="Bootstrap" class="md-nav__link">
+    <a href="../usage-guide/bootstrap/index.html" title="Bootstrap" class="md-nav__link">
       Bootstrap
     </a>
   </li>
@@ -383,7 +501,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/usage-guide/smart-contract-guide/index.html" title="智能合约指南" class="md-nav__link">
+    <a href="../usage-guide/smart-contract-guide/index.html" title="智能合约指南" class="md-nav__link">
       智能合约指南
     </a>
   </li>
@@ -395,7 +513,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/usage-guide/rpc/index.html" title="JSON-RPC" class="md-nav__link">
+    <a href="../usage-guide/rpc/index.html" title="JSON-RPC" class="md-nav__link">
       JSON-RPC
     </a>
   </li>
@@ -407,7 +525,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/usage-guide/rpc_error_code/index.html" title="JSON-RPC 错误代码" class="md-nav__link">
+    <a href="../usage-guide/rpc_error_code/index.html" title="JSON-RPC 错误代码" class="md-nav__link">
       JSON-RPC 错误代码
     </a>
   </li>
@@ -419,7 +537,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/usage-guide/admintool/index.html" title="系统合约 (System Contract)" class="md-nav__link">
+    <a href="../usage-guide/admintool/index.html" title="系统合约 (System Contract)" class="md-nav__link">
       系统合约 (System Contract)
     </a>
   </li>
@@ -431,7 +549,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/usage-guide/txtool/index.html" title="交易相关工具 (Transaction Tool)" class="md-nav__link">
+    <a href="../usage-guide/txtool/index.html" title="交易相关工具 (Transaction Tool)" class="md-nav__link">
       交易相关工具 (Transaction Tool)
     </a>
   </li>
@@ -467,7 +585,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/system_management/node/index.html" title="节点管理" class="md-nav__link">
+    <a href="../system_management/node/index.html" title="节点管理" class="md-nav__link">
       节点管理
     </a>
   </li>
@@ -479,7 +597,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/system_management/permission/index.html" title="权限管理" class="md-nav__link">
+    <a href="../system_management/permission/index.html" title="权限管理" class="md-nav__link">
       权限管理
     </a>
   </li>
@@ -491,7 +609,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/system_management/user/index.html" title="用户管理" class="md-nav__link">
+    <a href="../system_management/user/index.html" title="用户管理" class="md-nav__link">
       用户管理
     </a>
   </li>
@@ -503,7 +621,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/system_management/quota/index.html" title="配额管理" class="md-nav__link">
+    <a href="../system_management/quota/index.html" title="配额管理" class="md-nav__link">
       配额管理
     </a>
   </li>
@@ -515,7 +633,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/system_management/log/index.html" title="日志管理" class="md-nav__link">
+    <a href="../system_management/log/index.html" title="日志管理" class="md-nav__link">
       日志管理
     </a>
   </li>
@@ -527,7 +645,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/system_management/snapshot/index.html" title="快照" class="md-nav__link">
+    <a href="../system_management/snapshot/index.html" title="快照" class="md-nav__link">
       快照
     </a>
   </li>
@@ -563,7 +681,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/crosschain/crosschain_contract_example/index.html" title="跨链合约编写及操作示例" class="md-nav__link">
+    <a href="../crosschain/crosschain_contract_example/index.html" title="跨链合约编写及操作示例" class="md-nav__link">
       跨链合约编写及操作示例
     </a>
   </li>
@@ -599,7 +717,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/architecture/architecture/index.html" title="微服务 (Micro Service)" class="md-nav__link">
+    <a href="../architecture/architecture/index.html" title="微服务 (Micro Service)" class="md-nav__link">
       微服务 (Micro Service)
     </a>
   </li>
@@ -611,7 +729,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/architecture/consensus/index.html" title="共识 (Consensus)" class="md-nav__link">
+    <a href="../architecture/consensus/index.html" title="共识 (Consensus)" class="md-nav__link">
       共识 (Consensus)
     </a>
   </li>
@@ -623,7 +741,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/architecture/transaction_process/index.html" title="交易处理 (Transaction Process)" class="md-nav__link">
+    <a href="../architecture/transaction_process/index.html" title="交易处理 (Transaction Process)" class="md-nav__link">
       交易处理 (Transaction Process)
     </a>
   </li>
@@ -635,7 +753,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/architecture/view/index.html" title="视图 (View)" class="md-nav__link">
+    <a href="../architecture/view/index.html" title="视图 (View)" class="md-nav__link">
       视图 (View)
     </a>
   </li>
@@ -652,7 +770,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/faq/index.html" title="常见问题" class="md-nav__link">
+    <a href="../faq/index.html" title="常见问题" class="md-nav__link">
       常见问题
     </a>
   </li>
@@ -683,7 +801,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/appendix/contributing/index.html" title="贡献代码" class="md-nav__link">
+    <a href="../appendix/contributing/index.html" title="贡献代码" class="md-nav__link">
       贡献代码
     </a>
   </li>
@@ -695,7 +813,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/zh/appendix/glossary/index.html" title="词汇表" class="md-nav__link">
+    <a href="../appendix/glossary/index.html" title="词汇表" class="md-nav__link">
       词汇表
     </a>
   </li>
@@ -736,7 +854,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/index.html" title="Index" class="md-nav__link">
+    <a href="../../en/index.html" title="Index" class="md-nav__link">
       Index
     </a>
   </li>
@@ -748,7 +866,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/getting_started/index.html" title="Getting Started" class="md-nav__link">
+    <a href="../../en/getting_started/index.html" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -779,7 +897,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/key-concepts/blockchain/index.html" title="Blockchain" class="md-nav__link">
+    <a href="../../en/key-concepts/blockchain/index.html" title="Blockchain" class="md-nav__link">
       Blockchain
     </a>
   </li>
@@ -791,7 +909,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/key-concepts/cita/index.html" title="CITA" class="md-nav__link">
+    <a href="../../en/key-concepts/cita/index.html" title="CITA" class="md-nav__link">
       CITA
     </a>
   </li>
@@ -808,7 +926,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/components/index.html" title="Components" class="md-nav__link">
+    <a href="../../en/components/index.html" title="Components" class="md-nav__link">
       Components
     </a>
   </li>
@@ -839,7 +957,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/usage-guide/bootstrap/index.html" title="Bootstrap" class="md-nav__link">
+    <a href="../../en/usage-guide/bootstrap/index.html" title="Bootstrap" class="md-nav__link">
       Bootstrap
     </a>
   </li>
@@ -851,7 +969,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/usage-guide/smart-contract-guide/index.html" title="Smart Contracts" class="md-nav__link">
+    <a href="../../en/usage-guide/smart-contract-guide/index.html" title="Smart Contracts" class="md-nav__link">
       Smart Contracts
     </a>
   </li>
@@ -863,7 +981,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/usage-guide/rpc/index.html" title="JSON-RPC" class="md-nav__link">
+    <a href="../../en/usage-guide/rpc/index.html" title="JSON-RPC" class="md-nav__link">
       JSON-RPC
     </a>
   </li>
@@ -875,7 +993,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/usage-guide/rpc_error_code/index.html" title="JSON-RPC Error Code" class="md-nav__link">
+    <a href="../../en/usage-guide/rpc_error_code/index.html" title="JSON-RPC Error Code" class="md-nav__link">
       JSON-RPC Error Code
     </a>
   </li>
@@ -887,7 +1005,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/usage-guide/admintool/index.html" title="System Contract" class="md-nav__link">
+    <a href="../../en/usage-guide/admintool/index.html" title="System Contract" class="md-nav__link">
       System Contract
     </a>
   </li>
@@ -899,7 +1017,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/usage-guide/txtool/index.html" title="Transaction Tool" class="md-nav__link">
+    <a href="../../en/usage-guide/txtool/index.html" title="Transaction Tool" class="md-nav__link">
       Transaction Tool
     </a>
   </li>
@@ -935,7 +1053,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/system_management/node/index.html" title="Node" class="md-nav__link">
+    <a href="../../en/system_management/node/index.html" title="Node" class="md-nav__link">
       Node
     </a>
   </li>
@@ -947,7 +1065,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/system_management/permission/index.html" title="Permission" class="md-nav__link">
+    <a href="../../en/system_management/permission/index.html" title="Permission" class="md-nav__link">
       Permission
     </a>
   </li>
@@ -959,7 +1077,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/system_management/user/index.html" title="User" class="md-nav__link">
+    <a href="../../en/system_management/user/index.html" title="User" class="md-nav__link">
       User
     </a>
   </li>
@@ -971,7 +1089,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/system_management/quota/index.html" title="Quota" class="md-nav__link">
+    <a href="../../en/system_management/quota/index.html" title="Quota" class="md-nav__link">
       Quota
     </a>
   </li>
@@ -983,7 +1101,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/system_management/log/index.html" title="Log" class="md-nav__link">
+    <a href="../../en/system_management/log/index.html" title="Log" class="md-nav__link">
       Log
     </a>
   </li>
@@ -995,7 +1113,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/system_management/snapshot/index.html" title="Snapshot" class="md-nav__link">
+    <a href="../../en/system_management/snapshot/index.html" title="Snapshot" class="md-nav__link">
       Snapshot
     </a>
   </li>
@@ -1031,7 +1149,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/crosschain/crosschain_contract_example/index.html" title="Cross Chain Contract Examples" class="md-nav__link">
+    <a href="../../en/crosschain/crosschain_contract_example/index.html" title="Cross Chain Contract Examples" class="md-nav__link">
       Cross Chain Contract Examples
     </a>
   </li>
@@ -1067,7 +1185,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/architecture/architecture/index.html" title="Micro Service" class="md-nav__link">
+    <a href="../../en/architecture/architecture/index.html" title="Micro Service" class="md-nav__link">
       Micro Service
     </a>
   </li>
@@ -1079,7 +1197,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/architecture/consensus/index.html" title="Consensus" class="md-nav__link">
+    <a href="../../en/architecture/consensus/index.html" title="Consensus" class="md-nav__link">
       Consensus
     </a>
   </li>
@@ -1091,7 +1209,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/architecture/transaction_process/index.html" title="Transaction Process" class="md-nav__link">
+    <a href="../../en/architecture/transaction_process/index.html" title="Transaction Process" class="md-nav__link">
       Transaction Process
     </a>
   </li>
@@ -1103,7 +1221,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/architecture/view/index.html" title="View" class="md-nav__link">
+    <a href="../../en/architecture/view/index.html" title="View" class="md-nav__link">
       View
     </a>
   </li>
@@ -1120,7 +1238,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/faq/index.html" title="FAQ" class="md-nav__link">
+    <a href="../../en/faq/index.html" title="FAQ" class="md-nav__link">
       FAQ
     </a>
   </li>
@@ -1151,7 +1269,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/appendix/contributing/index.html" title="Contributing" class="md-nav__link">
+    <a href="../../en/appendix/contributing/index.html" title="Contributing" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -1163,7 +1281,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cryptape/cita/en/appendix/glossary/index.html" title="Glossary" class="md-nav__link">
+    <a href="../../en/appendix/glossary/index.html" title="Glossary" class="md-nav__link">
       Glossary
     </a>
   </li>
@@ -1186,12 +1304,293 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="依赖" class="md-nav__link">
+    依赖
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="系统平台要求" class="md-nav__link">
+    系统平台要求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="安装 docker" class="md-nav__link">
+    安装 docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" title="获取 Docker 镜像" class="md-nav__link">
+    获取 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="获取源码" class="md-nav__link">
+    获取源码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-env-and-daemon" title="Docker env and daemon" class="md-nav__link">
+    Docker env and daemon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="编译" class="md-nav__link">
+    编译
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="生成节点配置" class="md-nav__link">
+    生成节点配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="运行节点" class="md-nav__link">
+    运行节点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="测试" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="验证" class="md-nav__link">
+    验证
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                  <a href="https://github.com/cryptape/cita/docs/docs/zh/getting_started.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">依赖<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">系统平台要求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>CITA 是基于 Ubuntu 16.04 稳定版开发的，在该系统版本上运行将是正确无误的。</p>
+<p>推荐使用 <code>docker</code> 编译和部署 <code>CITA</code>，保证环境一致。</p>
+<h3 id="docker">安装 docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/install/">在线资料</a></p>
+<h3 id="docker_1">获取 Docker 镜像<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h3>
+<p>CITA 的 Docker 镜像托管在 <a href="https://hub.docker.com/r/cita/cita-build/">DockerHub</a></p>
+<p>可以使用 <code>docker pull</code> 命令直接从 DockerHub 获取， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/pull.html">在线资料</a>。</p>
+<p>对于内网环境，也可以通过 <code>docker save</code> 和 <code>docker load</code> 传递镜像， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/other.html">在线资料</a>。</p>
+<h3 id="_4">获取源码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/cryptape/cita.git
+<span class="nb">cd</span> cita
+git submodule init
+git submodule update
+</pre></div>
 
+<h3 id="docker-env-and-daemon">Docker env and daemon<a class="headerlink" href="#docker-env-and-daemon" title="Permanent link">&para;</a></h3>
+<p>在源码根目录下，我们提供了<code>env.sh</code>脚本，封装了 docker 相关的操作。</p>
+<p>运行此脚本，以实际要运行的命令作为参数，即表示在 docker 环境中运行相关命令。</p>
+<p>例如：</p>
+<div class="highlight"><pre><span></span>./env.sh make debug
+</pre></div>
+
+<p>即表示在 docker 环境中运行<code>make debug</code>。</p>
+<p>不带任何参数运行<code>./env.sh</code>，将直接获取一个 docker 环境的 shell。</p>
+<p>国内用户请使用 <code>env_cn.sh</code>，提供了编译时的国内镜像加速。</p>
+<p>还提供了<code>daemon.sh</code>,用法同<code>env.sh</code>，效果是后台运行。</p>
+<p>如果出现 docker 相关的报错，可以执行如下命令并重试：</p>
+<div class="highlight"><pre><span></span>docker <span class="nb">kill</span> <span class="k">$(</span>docker ps -a -q<span class="k">)</span>
+</pre></div>
+
+<h2 id="_5">编译<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）</p>
+<div class="highlight"><pre><span></span>./env.sh make debug
+</pre></div>
+
+<p>或者</p>
+<div class="highlight"><pre><span></span>./env.sh make release
+</pre></div>
+
+<p>编译生成的文件在发布件目录<code>target/install</code>下，生产环境下只需要这个目录即可。</p>
+<h2 id="_6">生成节点配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>先切换到发布件目录：</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> target/install
+</pre></div>
+
+<p>发布件目录中的<code>admintool</code>工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。</p>
+<p>该工具默认生成的是本地 4 个节点的 Demo 示例配置：</p>
+<div class="highlight"><pre><span></span>./env.sh ./bin/admintool.sh
+</pre></div>
+
+<p>生产环境中，用户需要根据实际情况更改默认配置。</p>
+<p>使用命令<code>admintool.sh -h</code>来获得详细帮助信息，允许自定义的配置包括：</p>
+<ul>
+<li>系统管理员账户</li>
+<li>网络列表，按照<code>IP1:PORT1,IP2:PORT2,IP3:PORT3 ... IPn:PORTn</code>的格式</li>
+<li>共识算法选择，可供选择的有<code>cita-bft</code>、<code>raft</code> 和<code>poa</code></li>
+<li>加密方法选择</li>
+<li>出块时间间隔</li>
+<li>单数据块中交易数量限制</li>
+<li>累积多少历史交易量后进行重复交易的检查</li>
+</ul>
+<p>节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：</p>
+<ul>
+<li>node0</li>
+<li>node1</li>
+<li>node2</li>
+<li>node3</li>
+</ul>
+<h2 id="_7">运行节点<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>操作节点的命令都是相同的，以下以<code>node0</code>为例进行演示。</p>
+<ol>
+<li>配置节点：</li>
+</ol>
+<div class="highlight"><pre><span></span>./env.sh ./bin/cita setup node0
+</pre></div>
+
+<ol>
+<li>启动节点：</li>
+</ol>
+<p>该命令正常情况下不会返回，因此需要后台运行。</p>
+<div class="highlight"><pre><span></span>./daemon.sh ./bin/cita start node0
+</pre></div>
+
+<ol>
+<li>停止节点：</li>
+</ol>
+<div class="highlight"><pre><span></span>./env.sh ./bin/cita stop node0
+</pre></div>
+
+<ol>
+<li>其他操作</li>
+</ol>
+<p>具体使用查看命令的帮助信息：</p>
+<div class="highlight"><pre><span></span>./env.sh ./bin/cita <span class="nb">help</span>
+</pre></div>
+
+<h2 id="_8">测试<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>除了上述的基本操作命令，为了方便用户对 Demo 进行相关测试，我们在目录<code>cita/tests/integreate_test</code>下提供了一些测试脚本。</p>
+<p>以下命令在源码根目录下运行。</p>
+<ol>
+<li>启动 4 个节点</li>
+</ol>
+<div class="highlight"><pre><span></span>./env.sh tests/integrate_test/cita_start.sh
+</pre></div>
+
+<p>该命令正常情况下不会返回，需要保持 shell 不退出。或者用<code>daemon.sh</code>运行。</p>
+<ol>
+<li>停止 4 个节点</li>
+</ol>
+<p>上一节中的命令中止，或者执行命令：</p>
+<div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_stop.sh
+</pre></div>
+
+<ol>
+<li>基本功能测试</li>
+</ol>
+<p>4 个节点启动并成功出块，基本功能测试然后停止 4 个节点：</p>
+<div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_basic.sh
+</pre></div>
+
+<ol>
+<li>发送交易测试</li>
+</ol>
+<div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_transactiontest.sh
+</pre></div>
+
+<ol>
+<li>拜占庭测试</li>
+</ol>
+<p>模拟网络异常情况下的功能测试。</p>
+<div class="highlight"><pre><span></span>./env.sh ./tests/integrate_test/cita_byzantinetest.sh
+</pre></div>
+
+<h2 id="_9">验证<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li>查询节点个数</li>
+</ul>
+<p>Request:</p>
+<div class="highlight"><pre><span></span>./env.sh curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;net_peerCount&quot;,&quot;params&quot;:[],&quot;id&quot;:74}&#39;</span> <span class="m">127</span>.0.0.1:1337
+</pre></div>
+
+<p>Result:</p>
+<div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s2">&quot;jsonrpc&quot;</span>: <span class="s2">&quot;2.0&quot;</span>,
+  <span class="s2">&quot;id&quot;</span>: <span class="m">74</span>,
+  <span class="s2">&quot;result&quot;</span>: <span class="s2">&quot;0x3&quot;</span>
+<span class="o">}</span>
+</pre></div>
+
+<ul>
+<li>查询当前块高度。</li>
+</ul>
+<p>Request:</p>
+<div class="highlight"><pre><span></span>./env.sh curl -X POST --data <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;cita_blockNumber&quot;,&quot;params&quot;:[],&quot;id&quot;:83}&#39;</span> <span class="m">127</span>.0.0.1:1337
+</pre></div>
+
+<p>Result:</p>
+<div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s2">&quot;jsonrpc&quot;</span>: <span class="s2">&quot;2.0&quot;</span>,
+  <span class="s2">&quot;id&quot;</span>: <span class="m">83</span>,
+  <span class="s2">&quot;result&quot;</span>: <span class="s2">&quot;0x8&quot;</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>返回块高度，表示节点已经开始正常出块。</p>
+<p>更多 API（如合约调用、交易查询）请参见<a href="https://cryptape.github.io/cita/usage-guide/rpc">RPC 调用</a>。</p>
+                
+                  
+                
+              
               
                 
               
@@ -1202,6 +1601,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../index.html" title="首页" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                首页
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../key-concepts/blockchain/index.html" title="区块链 (Blockchain)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                区块链 (Blockchain)
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1222,26 +1656,26 @@
       
     </div>
     
-      <script src="/cryptape/cita/assets/javascripts/application.6cdc17f0.js"></script>
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
       
         
         
           
-          <script src="/cryptape/cita/assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
           
             
               
-              <script src="/cryptape/cita/assets/javascripts/lunr/lunr.zh.js"></script>
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
             
           
           
-            <script src="/cryptape/cita/assets/javascripts/lunr/lunr.multi.js"></script>
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
           
         
       
-      <script>app.initialize({version:"0.17.2",url:{base:"/cryptape/cita"}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
       
     
     
