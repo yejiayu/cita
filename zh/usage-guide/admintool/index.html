@@ -1544,7 +1544,7 @@ option:
 <li><code>0x00000000000000000000000000000000013241a3</code>: 代表配额管理系统合约地址，用户可修改<code>0xd3f1a71d1d8f073f4e725f57bbe14d67da22f888</code>值为自己生成的地址，其为配额管理的管理员地址，
                                                 可由此地址进行配额的管理。 <strong><em>须保存好对应的私钥</em></strong></li>
 <li><code>0x0000000000000000000000000000000031415926</code>: 代表只读配置合约，三个参数分别代表系统合约生效需要的块数，默认为1代表下一个块生效；权限检查的开关，默认关闭；配额检查开关，默认为关闭。</li>
-<li><code>0x00000000000000000000000000000000013241b4</code>: 代表新CITA权限管理合约地址，用户可修改<code>0x9dcd6b234e2772c5451fd4ccf7582f4283140697</code>值为自己生成的地址，其为超级管理员地址，
+<li><code>0x00000000000000000000000000000000013241b4</code>: 代表CITA权限管理合约地址，用户可修改<code>0x9dcd6b234e2772c5451fd4ccf7582f4283140697</code>值为自己生成的地址，其为超级管理员地址，
                                                 此地址拥有权限管理本身的所有权限。 <strong><em>须保存好对应的私钥</em></strong></li>
 <li><code>0x00000000000000000000000000000000013241b5</code>: 代表权限合约地址，其中的多个地址分别代表系统内置的权限类型。</li>
 <li><code>0x00000000000000000000000000000000013241b6</code>: 代表用户管理合约地址，三个参数分别代表rootGroup的父Group、rootGroup的名称以及组内初始的用户地址。
@@ -1590,44 +1590,19 @@ option:
 <li><code>journaldb_type</code>: 表示当前使用的JournalDB算法，有"archive" "light" "fast" "basic"等4种类型，默认是archive。</li>
 </ul>
 <h3 id="_7">节点管理系统合约<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>节点管理合约存放在<code>install/scripts/contracts/node_manager.sol</code>，函数签名可通过<code>solc node_manager.sol --hashes</code>编译得到，也可以在<a href="https://remix.ethereum.org">remix</a>上查看。</p>
-<p>node_manager.sol合约详情如下所示：</p>
-<div class="highlight"><pre><span></span>contract address: <span class="nv">0x00000000000000000000000000000000013241a2</span>
-<span class="o">=======</span> node_manager.sol:NodeManager <span class="o">=======</span>
-Function signatures: 
-<span class="m">70480275</span>: addAdmin<span class="o">(</span>address<span class="o">)</span>
-dd4c97a0: approveNode<span class="o">(</span>address<span class="o">)</span>
-2d4ede93: deleteNode<span class="o">(</span>address<span class="o">)</span>
-30ccebb5: getStatus<span class="o">(</span>address<span class="o">)</span>
-24d7806c: isAdmin<span class="o">(</span>address<span class="o">)</span>
-609df32f: listNode<span class="o">()</span>
-ddad2ffe: newNode<span class="o">(</span>address<span class="o">)</span>
-645b8b1b: status<span class="o">(</span>address<span class="o">)</span>
-</pre></div>
-
-<p>共识节点管理的相关描述及方法介绍见<a href="https://cryptape.github.io/cita/system_management/node/index.html#_6">node_manager</a></p>
+<p>节点管理合约存放在<code>install/scripts/contracts/node_manager.sol</code>。</p>
+<p>在<code>install/scripts/contracts/docs</code>目录也提供了<code>NodeManager-hashes.json</code>可供查看，并提供了针对用户和开发者的文档，分别为<code>NodeManager-userdoc.json</code>及<code>NodeManager-devdoc.json</code></p>
+<p>共识节点管理的相关描述及方法介绍见<a href="https://cryptape.github.io/cita/zh/system_management/node/index.html#_6">node_manager</a></p>
 <h3 id="_8">配额管理系统合约<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>配额管理合约存放在<code>install/scripts/contracts/system/quota_manager.sol</code>，合约函数hash详情如下所示：</p>
-<div class="highlight"><pre><span></span>contract address: <span class="nv">0x00000000000000000000000000000000013241a3</span>
-<span class="o">=======</span> quota_manager.sol:QuotaManager <span class="o">=======</span>
-Function signatures: 
-<span class="m">70480275</span>: addAdmin<span class="o">(</span>address<span class="o">)</span>
-942a8ad3: getAQL<span class="o">(</span>address<span class="o">)</span>
-8a48ac03: getAccounts<span class="o">()</span>
-0bc8982f: getBQL<span class="o">()</span>
-bd9fbe7b: getDefaultAQL<span class="o">()</span>
-cdbcff6d: getQuotas<span class="o">()</span>
-24d7806c: isAdmin<span class="o">(</span>address<span class="o">)</span>
-499a1bcd: setAQL<span class="o">(</span>address,uint256<span class="o">)</span>
-931cd0cc: setBQL<span class="o">(</span>uint256<span class="o">)</span>
-b107ea12: setDefaultAQL<span class="o">(</span>uint256<span class="o">)</span>
-</pre></div>
-
-<p>配额管理的相关描述及方法介绍见<a href="https://cryptape.github.io/cita/system_management/quota/index.html">quota_manager</a></p>
+<p>配额管理合约存放在<code>install/scripts/contracts/system/quota_manager.sol</code>。</p>
+<p>在<code>install/scripts/contracts/docs</code>目录下也提供了<code>QuotaManager-hashes.json</code>可供查看，并提供了针对用户和开发者的文档，分别为<code>QuotaManager-userdoc.json</code>及<code>QuotaManager-devdoc.json</code></p>
+<p>配额管理的相关描述及方法介绍见<a href="https://cryptape.github.io/cita/zh/system_management/quota/index.html">quota_manager</a></p>
 <h3 id="_9">单独增加节点<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>相关描述及操作见<a href="https://cryptape.github.io/cita/system_management/node/index.html#_2">普通节点管理</a></p>
 <h4 id="_10">权限管理系统合约<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p>新权限系统合约存放在<code>install/scripts/contracts/permission_management</code>文件夹下，相关接口说明在<code>install/scripts/contracts/permission_management/README.md</code>，详细的接口说明见<a href="https://cryptape.github.io/cita/system_management/permission/index.html">permission_management</a></p>
+<p>权限管理合约存放在<code>install/scripts/contracts/permission_management</code>文件夹下，</p>
+<p>在<code>install/scripts/contracts/docs</code>目录下也提供了<code>PermissionManagement-hashes.json</code>可供查看，并提供了针对用户和开发者的文档，分别为<code>PermissionManagement-userdoc.json</code>及<code>PermissionManagement-devdoc.json</code></p>
+<p>详细的接口说明见<a href="https://cryptape.github.io/cita/zh/system_management/permission/index.html#_3">permission_management</a></p>
                 
                   
                 
