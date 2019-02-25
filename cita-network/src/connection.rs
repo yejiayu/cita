@@ -469,7 +469,9 @@ fn init_config_peer(config: Vec<PeerConfig>, connect_sender: Sender<(u32, Socket
                 match format!("{}:{}", ip, port).to_socket_addrs() {
                     Ok(mut result) => {
                         if let Some(addr) = result.next() {
-                            connect_sender.send((id_card, addr, peer.common_name.clone().unwrap_or_default())).unwrap()
+                            connect_sender
+                                .send((id_card, addr, peer.common_name.clone().unwrap_or_default()))
+                                .unwrap()
                         } else {
                             error!("Can't convert to socket address, error");
                             unread_peers.push(peer.clone());
@@ -479,14 +481,13 @@ fn init_config_peer(config: Vec<PeerConfig>, connect_sender: Sender<(u32, Socket
                         error!("Can't convert to socket address, error: {}", e);
                     }
                 }
-
             } else {
                 error!("Invalid peer config: {:?}", peer);
             }
         }
 
         if unread_peers.is_empty() {
-            return
+            return;
         }
 
         peers = unread_peers.clone();
