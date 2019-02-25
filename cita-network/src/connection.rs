@@ -473,11 +473,12 @@ fn init_config_peer(config: Vec<PeerConfig>, connect_sender: &Sender<(u32, Socke
                                 .send((id_card, addr, peer.common_name.clone().unwrap_or_default()))
                                 .unwrap()
                         } else {
-                            error!("Can't convert to socket address, error");
                             unread_peers.push(peer.clone());
+                            error!("Can't convert to socket address, error");
                         }
                     }
                     Err(e) => {
+                        unread_peers.push(peer.clone());
                         error!("Can't convert to socket address, error: {}", e);
                     }
                 }
